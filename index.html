@@ -36,15 +36,9 @@
          OPEN GRAPH
     ====================================================== -->
 
-    <meta
-        property="og:type"
-        content="website"
-    >
+    <meta property="og:type" content="website">
 
-    <meta
-        property="og:locale"
-        content="id_ID"
-    >
+    <meta property="og:locale" content="id_ID">
 
     <meta
         property="og:site_name"
@@ -79,20 +73,11 @@
         content="https://cdn.jsdelivr.net/gh/zakkimusyarrof/img-byzkk@main/fer.png"
     >
 
-    <meta
-        property="og:image:type"
-        content="image/png"
-    >
+    <meta property="og:image:type" content="image/png">
 
-    <meta
-        property="og:image:width"
-        content="1200"
-    >
+    <meta property="og:image:width" content="1200">
 
-    <meta
-        property="og:image:height"
-        content="630"
-    >
+    <meta property="og:image:height" content="630">
 
     <meta
         property="og:image:alt"
@@ -130,15 +115,16 @@
 
     <!-- =====================================================
          STRUCTURED DATA
+         Sudah disesuaikan ke 10 Oktober 2026, 09.00 WIB
     ====================================================== -->
 
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Event",
-        "name": "The Wedding of Fera & AAnwarh",
+        "name": "The Wedding of Fera & Anwar",
         "description": "Undangan pernikahan Fera dan Anwar.",
-        "startDate": "2026-09-13T13:00:00+07:00",
+        "startDate": "2026-10-10T09:00:00+07:00",
         "eventStatus": "https://schema.org/EventScheduled",
         "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
         "image": [
@@ -146,7 +132,7 @@
         ],
         "location": {
             "@type": "Place",
-            "name": "Ds. Kelet RT 34 rw 05, Kec. Keling, Kab. Jepara",
+            "name": "Ds. Kelet RT 34 RW 05, Kec. Keling, Kab. Jepara",
             "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "Jalan Km-9 Jl. Raya Banjarejo",
@@ -175,10 +161,36 @@
                 extend: {
 
                     colors: {
-                        theme: '#788266',
-                        'theme-dark': '#5a624d',
-                        'theme-light': '#e8ece1',
-                        bg: '#FAF9F6'
+
+                        /*
+                        ==========================================
+                        WEDDING PALETTE
+                        ==========================================
+                        Cover           : #2B1A17
+                        Burgundy        : #4A1018
+                        Burgundy Button : #681C27
+                        Ivory           : #F5EBDD
+                        Cream           : #DCC9A3
+                        Gold            : #C6A15B
+                        Brown Text      : #5A3A2E
+                        Off White       : #FAF8F2
+                        ==========================================
+                        */
+
+                        cover: '#2B1A17',
+                        burgundy: '#4A1018',
+                        button: '#681C27',
+                        ivory: '#F5EBDD',
+                        cream: '#DCC9A3',
+                        gold: '#C6A15B',
+                        brown: '#5A3A2E',
+                        offwhite: '#FAF8F2',
+
+                        /* Legacy aliases untuk fungsi JS */
+                        theme: '#681C27',
+                        'theme-dark': '#4A1018',
+                        'theme-light': '#F5EBDD',
+                        bg: '#F5EBDD'
                     },
 
                     fontFamily: {
@@ -204,9 +216,12 @@
                     },
 
                     animation: {
+
                         'fade-in-up':
                             'fadeInUp 0.5s ease-out forwards'
+
                     }
+
                 }
             }
         }
@@ -256,231 +271,757 @@
 
     <style>
 
-        body {
-            background-color: #FAF9F6;
-            overflow-x: hidden;
+        :root {
+
+            --cover:
+                #2B1A17;
+
+            --burgundy:
+                #4A1018;
+
+            --button:
+                #681C27;
+
+            --ivory:
+                #F5EBDD;
+
+            --cream:
+                #DCC9A3;
+
+            --gold:
+                #C6A15B;
+
+            --brown:
+                #5A3A2E;
+
+            --offwhite:
+                #FAF8F2;
         }
 
-        .no-scroll {
-            overflow: hidden;
-            height: 100vh;
+
+        html {
+            scroll-behavior: smooth;
         }
+
+
+        body {
+
+            background-color:
+                var(--ivory);
+
+            color:
+                var(--brown);
+
+            overflow-x:
+                hidden;
+        }
+
+
+        .no-scroll {
+
+            overflow:
+                hidden;
+
+            height:
+                100vh;
+        }
+
+
+        /* =====================================================
+           SELECTION
+        ====================================================== */
+
+        ::selection {
+
+            background:
+                var(--burgundy);
+
+            color:
+                var(--ivory);
+        }
+
 
         /* =====================================================
            BOTTOM NAVIGATION
         ====================================================== */
 
         .bottom-nav {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+
+            background:
+                rgba(245, 235, 221, 0.92);
+
+            backdrop-filter:
+                blur(12px);
+
+            -webkit-backdrop-filter:
+                blur(12px);
+
+            border:
+                1px solid
+                rgba(198, 161, 91, 0.40);
 
             box-shadow:
-                0 -4px 20px rgba(0, 0, 0, 0.05);
+                0 -4px 25px
+                rgba(43, 26, 23, 0.10);
         }
+
 
         .nav-link {
-            transition: all 0.3s ease;
+
+            color:
+                #927B70;
+
+            transition:
+                all 0.3s ease;
         }
 
-        .nav-link.active {
-            color: #788266;
-            transform: translateY(-3px);
+
+        .nav-link:hover {
+
+            color:
+                var(--button);
         }
+
+
+        .nav-link.active {
+
+            color:
+                var(--burgundy);
+
+            transform:
+                translateY(-3px);
+        }
+
 
         /* =====================================================
            MUSIC
         ====================================================== */
 
         .spin-slow {
-            animation: spin 4s linear infinite;
+
+            animation:
+                spin 4s linear infinite;
         }
+
 
         /* =====================================================
            SCROLLBAR
         ====================================================== */
 
         ::-webkit-scrollbar {
-            width: 8px;
+
+            width:
+                8px;
         }
+
 
         ::-webkit-scrollbar-track {
-            background: #f1f1f1;
+
+            background:
+                var(--ivory);
         }
+
 
         ::-webkit-scrollbar-thumb {
-            background: #c5cbb9;
-            border-radius: 4px;
+
+            background:
+                var(--gold);
+
+            border-radius:
+                4px;
         }
 
+
         ::-webkit-scrollbar-thumb:hover {
-            background: #788266;
+
+            background:
+                var(--button);
         }
+
 
         /* =====================================================
            SCROLL INDICATOR
         ====================================================== */
 
         .scroll-indicator {
+
             animation:
-                scrollDown 1.8s ease-in-out infinite;
+                scrollDown
+                1.8s
+                ease-in-out
+                infinite;
         }
+
 
         @keyframes scrollDown {
 
             0%,
             100% {
-                transform: translateY(0);
-                opacity: 0.6;
+
+                transform:
+                    translateY(0);
+
+                opacity:
+                    0.6;
             }
 
             50% {
-                transform: translateY(7px);
-                opacity: 1;
+
+                transform:
+                    translateY(7px);
+
+                opacity:
+                    1;
             }
         }
 
+
         /* =====================================================
-           FALLING WHITE PETALS
+           FALLING PETALS
         ====================================================== */
 
         #falling-flowers {
-            position: fixed;
-            inset: 0;
 
-            z-index: 40;
+            position:
+                fixed;
 
-            pointer-events: none;
+            inset:
+                0;
 
-            overflow: hidden;
+            z-index:
+                40;
+
+            pointer-events:
+                none;
+
+            overflow:
+                hidden;
         }
 
+
         .falling-petal {
-            position: absolute;
 
-            top: -40px;
+            position:
+                absolute;
 
-            width: 10px;
-            height: 16px;
+            top:
+                -40px;
+
+            width:
+                10px;
+
+            height:
+                16px;
 
             background:
                 linear-gradient(
                     135deg,
-                    rgba(255, 255, 255, 0.98),
-                    rgba(235, 235, 235, 0.72)
+                    rgba(245, 235, 221, 0.98),
+                    rgba(220, 201, 163, 0.75)
                 );
 
             border-radius:
-                80% 20% 80% 20%;
+                80%
+                20%
+                80%
+                20%;
 
             box-shadow:
-                0 1px 4px rgba(255, 255, 255, 0.35),
-                0 2px 7px rgba(0, 0, 0, 0.18);
+                0 1px 4px
+                rgba(245, 235, 221, 0.35),
 
-            opacity: 0;
+                0 2px 7px
+                rgba(43, 26, 23, 0.18);
 
-            transform-origin: center;
+            opacity:
+                0;
+
+            transform-origin:
+                center;
 
             animation:
-                petalFall linear forwards,
-                petalSway ease-in-out infinite;
+                petalFall
+                linear
+                forwards,
+
+                petalSway
+                ease-in-out
+                infinite;
         }
+
 
         .falling-petal.small {
-            width: 7px;
-            height: 11px;
+
+            width:
+                7px;
+
+            height:
+                11px;
         }
 
+
         .falling-petal.large {
-            width: 13px;
-            height: 19px;
+
+            width:
+                13px;
+
+            height:
+                19px;
         }
+
 
         @keyframes petalFall {
 
             0% {
+
                 transform:
-                    translate3d(0, -40px, 0)
+                    translate3d(
+                        0,
+                        -40px,
+                        0
+                    )
                     rotate(0deg);
 
-                opacity: 0;
+                opacity:
+                    0;
             }
 
             10% {
-                opacity: 0.8;
+
+                opacity:
+                    0.8;
             }
 
             85% {
-                opacity: 0.72;
+
+                opacity:
+                    0.72;
             }
 
             100% {
+
                 transform:
-                    translate3d(0, 110vh, 0)
+                    translate3d(
+                        0,
+                        110vh,
+                        0
+                    )
                     rotate(720deg);
 
-                opacity: 0;
+                opacity:
+                    0;
             }
         }
+
 
         @keyframes petalSway {
 
             0% {
-                margin-left: -10px;
+                margin-left:
+                    -10px;
             }
 
             25% {
-                margin-left: 25px;
+                margin-left:
+                    25px;
             }
 
             50% {
-                margin-left: -20px;
+                margin-left:
+                    -20px;
             }
 
             75% {
-                margin-left: 30px;
+                margin-left:
+                    30px;
             }
 
             100% {
-                margin-left: -10px;
+                margin-left:
+                    -10px;
             }
         }
 
+
         .falling-petal:nth-child(3n) {
-            opacity: 0.6;
+
+            opacity:
+                0.6;
         }
+
 
         .falling-petal:nth-child(4n) {
-            filter: blur(0.4px);
+
+            filter:
+                blur(0.4px);
         }
 
+
         .falling-petal:nth-child(5n) {
-            filter: blur(0.8px);
+
+            filter:
+                blur(0.8px);
         }
+
+
+        /* =====================================================
+           INPUT PLACEHOLDER
+        ====================================================== */
+
+        input::placeholder,
+        textarea::placeholder {
+
+            color:
+                #9A8176;
+        }
+
 
         /* =====================================================
            REDUCED MOTION
         ====================================================== */
 
-        @media (prefers-reduced-motion: reduce) {
+        @media (
+            prefers-reduced-motion:
+            reduce
+        ) {
 
             .falling-petal,
             .scroll-indicator {
-                animation: none;
+
+                animation:
+                    none;
             }
 
             #falling-flowers {
-                display: none;
+
+                display:
+                    none;
             }
         }
 
+    /* =====================================================
+   WEDDING GALLERY SLIDER
+====================================================== */
+
+#gallery-main-image {
+
+    opacity:
+        1;
+
+    transform:
+        scale(1);
+}
+
+
+#gallery-main-image.gallery-changing {
+
+    opacity:
+        0;
+
+    transform:
+        scale(1.03);
+}
+
+
+/* =====================================================
+   THUMBNAILS
+====================================================== */
+
+.gallery-thumbnail {
+
+    position:
+        relative;
+
+    aspect-ratio:
+        1 / 1;
+
+    overflow:
+        hidden;
+
+    border-radius:
+        0.9rem;
+
+    cursor:
+        pointer;
+
+    border:
+        2px solid transparent;
+
+    background:
+        #FAF8F2;
+
+    transition:
+        all 0.3s ease;
+
+    padding:
+        0;
+}
+
+
+.gallery-thumbnail img {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        cover;
+
+    opacity:
+        0.62;
+
+    transform:
+        scale(1.01);
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.5s ease;
+}
+
+
+.gallery-thumbnail:hover {
+
+    border-color:
+        rgba(198, 161, 91, 0.6);
+}
+
+
+.gallery-thumbnail:hover img {
+
+    opacity:
+        0.9;
+
+    transform:
+        scale(1.08);
+}
+
+
+/* Active Placeholder */
+
+.gallery-thumbnail.active {
+
+    border-color:
+        #C6A15B;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(198, 161, 91, 0.15);
+}
+
+
+.gallery-thumbnail.active img {
+
+    opacity:
+        1;
+
+    transform:
+        scale(1.05);
+}
+
+
+/* Burgundy Overlay */
+
+.gallery-thumbnail::after {
+
+    content:
+        '';
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    background:
+        rgba(74, 16, 24, 0.18);
+
+    transition:
+        opacity 0.3s ease;
+}
+
+
+.gallery-thumbnail.active::after,
+.gallery-thumbnail:hover::after {
+
+    opacity:
+        0;
+}
+
+
+/* =====================================================
+   DOTS
+====================================================== */
+
+.gallery-dot {
+
+    width:
+        7px;
+
+    height:
+        7px;
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(90, 58, 46, 0.25);
+
+    border:
+        none;
+
+    padding:
+        0;
+
+    transition:
+        all 0.3s ease;
+}
+
+
+.gallery-dot.active {
+
+    width:
+        24px;
+
+    background:
+        #C6A15B;
+}
+
+
+/* =====================================================
+   PROGRESS BAR
+====================================================== */
+
+#gallery-progress {
+
+    width:
+        0%;
+
+    transition:
+        none;
+}
+
+
+#gallery-progress.running {
+
+    animation:
+        galleryProgress
+        5s
+        linear
+        forwards;
+}
+
+
+@keyframes galleryProgress {
+
+    from {
+
+        width:
+            0%;
+    }
+
+    to {
+
+        width:
+            100%;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+====================================================== */
+
+@media (max-width: 640px) {
+
+    .gallery-thumbnail {
+
+        border-radius:
+            0.65rem;
+    }
+
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+====================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    #gallery-main-image,
+    .gallery-thumbnail,
+    .gallery-thumbnail img,
+    .gallery-dot {
+
+        transition:
+            none !important;
+    }
+
+
+    #gallery-progress {
+
+        animation:
+            none !important;
+    }
+
+}
+
+        /* =====================================================
+   GALLERY LIGHTBOX
+====================================================== */
+
+#gallery-lightbox-image {
+    cursor: zoom-in;
+}
+
+#gallery-lightbox-image.zoomed {
+    transform: scale(1.5);
+    cursor: zoom-out;
+}
+
+#gallery-lightbox-content {
+    transition: transform 0.3s ease;
+}
+
+/* Thumbnail tetap menunjukkan bisa dibuka */
+.gallery-thumbnail {
+    cursor: zoom-in;
+}
+
+/* Saat popup terbuka */
+body.lightbox-open {
+    overflow: hidden;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+
+    #gallery-lightbox-image {
+        max-height: 72vh;
+        border-radius: 1rem;
+    }
+
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+
+    #gallery-lightbox,
+    #gallery-lightbox-image {
+        transition: none !important;
+    }
+
+}
+        
     </style>
 
 </head>
 
 
 <body
-    class="antialiased text-gray-800 no-scroll font-sans"
+    class="antialiased no-scroll font-sans"
     onload="initApp()"
 >
 
@@ -502,24 +1043,37 @@
 
     <div
         id="cover-screen"
-        class="fixed inset-0 z-[100] flex flex-col items-center justify-center overflow-hidden bg-black transition-transform duration-1000 ease-in-out"
+        class="fixed inset-0 z-[100] flex flex-col items-center justify-center overflow-hidden bg-[#2B1A17] transition-transform duration-1000 ease-in-out"
     >
 
         <!-- Background Video -->
-        <video 
-        class="absolute inset-0 w-full h-full object-cover z-0" 
-        autoplay 
-        loop 
-        muted 
-        playsinline>
-        <source src="https://raw.githubusercontent.com/zakkimusyarrof/video-zakkimusyarrof/b28c6420530873a7412a1488016034e1025ba99d/prem.mp4
-" type="video/mp4">
+
+        <video
+            class="absolute inset-0 w-full h-full object-cover z-0"
+            autoplay
+            loop
+            muted
+            playsinline
+        >
+
+            <source
+                src="https://raw.githubusercontent.com/zakkimusyarrof/video-zakkimusyarrof/b28c6420530873a7412a1488016034e1025ba99d/prem.mp4"
+                type="video/mp4"
+            >
+
         </video>
 
-        <!-- Dark Overlay -->
-        <div class="absolute inset-0 bg-black/60"></div>
+
+        <!-- Burgundy Overlay -->
+
+        <div
+            class="absolute inset-0"
+            style="background: rgba(74, 16, 24, 0.65);"
+        ></div>
+
 
         <!-- Content -->
+
         <div
             class="relative z-10 text-center px-6 w-full"
             data-aos="zoom-in"
@@ -527,29 +1081,32 @@
         >
 
             <p
-                class="text-white tracking-[0.2em] text-sm uppercase mb-4 font-light"
+                class="text-[#DCC9A3] tracking-[0.2em] text-sm uppercase mb-4 font-light"
             >
                 The Wedding Of
             </p>
+
 
             <div
                 class="cover-name-wrap flex flex-col items-center justify-center mb-6 gap-2"
             >
 
                 <h1
-                    class="font-script text-6xl md:text-7xl text-white leading-none m-0"
+                    class="font-script text-6xl md:text-7xl text-[#F5EBDD] leading-none m-0"
                 >
                     Fera
                 </h1>
 
+
                 <span
-                    class="cover-amp font-serif text-4xl text-yellow-400"
+                    class="cover-amp font-serif text-4xl text-[#C6A15B]"
                 >
-                    &
+                    &amp;
                 </span>
 
+
                 <h1
-                    class="font-script text-6xl md:text-7xl text-white leading-none m-0"
+                    class="font-script text-6xl md:text-7xl text-[#F5EBDD] leading-none m-0"
                 >
                     Anwar
                 </h1>
@@ -557,19 +1114,22 @@
             </div>
 
 
+            <!-- Guest -->
+
             <div
-                class="my-8 py-6 border-y border-white/30 backdrop-blur-sm bg-black/20 rounded-xl px-8"
+                class="my-8 py-6 border-y border-[#C6A15B]/50 backdrop-blur-sm bg-[#2B1A17]/35 rounded-xl px-8"
             >
 
                 <p
-                    class="text-sm text-gray-300 mb-2"
+                    class="text-sm text-[#DCC9A3] mb-2"
                 >
                     Kepada Yth. Bapak/Ibu/Saudara/i
                 </p>
 
+
                 <h2
                     id="guest-name"
-                    class="font-serif text-3xl md:text-4xl font-bold text-yellow-400"
+                    class="font-serif text-3xl md:text-4xl font-bold text-[#F5EBDD]"
                 >
                     Tamu Undangan
                 </h2>
@@ -577,9 +1137,11 @@
             </div>
 
 
+            <!-- Open Button -->
+
             <button
                 onclick="openInvitation()"
-                class="bg-theme hover:bg-theme-dark text-white px-8 py-3 rounded-full shadow-lg font-medium tracking-wide transition flex items-center justify-center mx-auto gap-2 group"
+                class="bg-[#681C27] hover:bg-[#C6A15B] hover:text-[#2B1A17] text-[#FAF8F2] px-8 py-3 rounded-full shadow-xl font-medium tracking-wide transition-all duration-300 flex items-center justify-center mx-auto gap-2 group"
             >
 
                 <i
@@ -605,10 +1167,11 @@
     >
 
         <!-- Music -->
+
         <button
             id="music-btn"
             onclick="toggleMusic()"
-            class="fixed top-6 right-6 z-50 bg-white/90 backdrop-blur p-3 rounded-full shadow-lg text-theme hover:scale-105 transition"
+            class="fixed top-6 right-6 z-50 bg-[#F5EBDD]/90 backdrop-blur p-3 rounded-full shadow-lg text-[#681C27] border border-[#C6A15B]/30 hover:scale-105 transition"
             aria-label="Toggle Music"
         >
 
@@ -620,48 +1183,63 @@
 
 
         <!-- Bottom Navigation -->
+
         <nav
-            class="bottom-nav fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-6 py-3 rounded-full flex gap-6 md:gap-10 border border-gray-100"
+            class="bottom-nav fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-6 py-3 rounded-full flex gap-6 md:gap-10"
         >
 
             <a
                 href="#home"
-                class="nav-link active text-gray-400 hover:text-theme flex flex-col items-center gap-1"
+                class="nav-link active flex flex-col items-center gap-1"
                 aria-label="Home"
             >
+
                 <i class="fa-solid fa-house"></i>
+
             </a>
+
 
             <a
                 href="#couple"
-                class="nav-link text-gray-400 hover:text-theme flex flex-col items-center gap-1"
+                class="nav-link flex flex-col items-center gap-1"
                 aria-label="Couple"
             >
+
                 <i class="fa-solid fa-heart"></i>
+
             </a>
+
 
             <a
                 href="#event"
-                class="nav-link text-gray-400 hover:text-theme flex flex-col items-center gap-1"
+                class="nav-link flex flex-col items-center gap-1"
                 aria-label="Event"
             >
+
                 <i class="fa-solid fa-calendar-check"></i>
+
             </a>
+
 
             <a
                 href="#gallery"
-                class="nav-link text-gray-400 hover:text-theme flex flex-col items-center gap-1"
+                class="nav-link flex flex-col items-center gap-1"
                 aria-label="Gallery"
             >
+
                 <i class="fa-solid fa-images"></i>
+
             </a>
+
 
             <a
                 href="#wishes"
-                class="nav-link text-gray-400 hover:text-theme flex flex-col items-center gap-1"
+                class="nav-link flex flex-col items-center gap-1"
                 aria-label="Wishes"
             >
+
                 <i class="fa-solid fa-comment-dots"></i>
+
             </a>
 
         </nav>
@@ -675,7 +1253,7 @@
 
     <main
         id="main-content"
-        class="hidden pb-24"
+        class="hidden pb-24 bg-[#F5EBDD]"
     >
 
         <!-- =================================================
@@ -694,55 +1272,63 @@
 
         <section
             id="home"
-            class="relative min-h-[100dvh] flex flex-col justify-end overflow-hidden"
+            class="relative min-h-[100dvh] flex flex-col justify-end overflow-hidden bg-[#2B1A17]"
         >
 
             <!-- Background -->
+
             <div
                 class="absolute inset-0 bg-[url('https://cdn.jsdelivr.net/gh/zakkimusyarrof/img-byzkk@main/fera.jpg')] bg-cover bg-center"
             ></div>
 
-            <!-- Overlay -->
+
+            <!-- Burgundy Gradient Overlay -->
+
             <div
-                class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"
+                class="absolute inset-0 bg-gradient-to-t from-[#2B1A17]/95 via-[#4A1018]/55 to-[#4A1018]/10"
             ></div>
 
 
             <!-- Content -->
+
             <div
                 class="relative z-10 text-center px-4 pb-28 sm:pb-32 w-full"
                 data-aos="fade-up"
             >
 
                 <p
-                    class="text-theme-light tracking-[0.2em] text-[11px] sm:text-sm uppercase mb-2"
+                    class="text-[#DCC9A3] tracking-[0.2em] text-[11px] sm:text-sm uppercase mb-2"
                 >
                     Mohon Doa Restu
                 </p>
 
+
                 <h1
-                    class="font-script text-[2.7rem] sm:text-5xl md:text-6xl leading-tight whitespace-nowrap text-white mb-3"
+                    class="font-script text-[2.7rem] sm:text-5xl md:text-6xl leading-tight whitespace-nowrap text-[#F5EBDD] mb-3"
                 >
                     Fera &amp; Anwar
                 </h1>
 
+
                 <p
-                    class="font-serif text-base sm:text-xl text-gray-300"
+                    class="font-serif text-base sm:text-xl text-[#DCC9A3]"
                 >
                     Sabtu, 10 Oktober 2026
                 </p>
 
 
                 <!-- Scroll Indicator -->
+
                 <a
                     href="#quote"
-                    class="scroll-indicator mt-8 inline-flex flex-col items-center text-white/70 hover:text-white transition-all duration-300"
+                    class="scroll-indicator mt-8 inline-flex flex-col items-center text-[#C6A15B]/80 hover:text-[#C6A15B] transition-all duration-300"
                     aria-label="Scroll ke bawah"
                 >
 
                     <span
-                        class="w-px h-10 bg-white/60"
+                        class="w-px h-10 bg-[#C6A15B]/70"
                     ></span>
+
 
                     <i
                         class="fa-solid fa-chevron-down text-xs -mt-1"
@@ -761,22 +1347,26 @@
 
         <section
             id="quote"
-            class="py-20 px-6 bg-white text-center"
+            class="py-20 px-6 bg-[#FAF8F2] text-center"
             data-aos="fade-up"
         >
 
             <i
-                class="fa-solid fa-leaf text-3xl text-theme mb-6 opacity-60"
+                class="fa-solid fa-leaf text-3xl text-[#C6A15B] mb-6 opacity-90"
             ></i>
 
-            <p
-                class="font-serif text-xl md:text-2xl leading-relaxed text-gray-600 max-w-2xl mx-auto mb-4 italic"
-            >
-                "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu isteri-isteri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya..."
-            </p>
 
             <p
-                class="font-bold text-gray-500 tracking-widest text-sm"
+                class="font-serif text-xl md:text-2xl leading-relaxed text-[#5A3A2E] max-w-2xl mx-auto mb-4 italic"
+            >
+                "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia
+                menciptakan untukmu isteri-isteri dari jenismu sendiri,
+                supaya kamu cenderung dan merasa tenteram kepadanya..."
+            </p>
+
+
+            <p
+                class="font-bold text-[#4A1018] tracking-widest text-sm"
             >
                 (QS. Ar-Rum: 21)
             </p>
@@ -790,7 +1380,7 @@
 
         <section
             id="couple"
-            class="py-24 px-6 bg-bg"
+            class="py-24 px-6 bg-[#F5EBDD]"
         >
 
             <div class="max-w-4xl mx-auto">
@@ -800,14 +1390,36 @@
                     data-aos="fade-down"
                 >
 
+                    <div
+                        class="flex justify-center items-center gap-3 mb-4"
+                    >
+
+                        <span
+                            class="w-10 h-px bg-[#C6A15B]/60"
+                        ></span>
+
+                        <span
+                            class="text-[#C6A15B]"
+                        >
+                            ✦
+                        </span>
+
+                        <span
+                            class="w-10 h-px bg-[#C6A15B]/60"
+                        ></span>
+
+                    </div>
+
+
                     <h2
-                        class="font-script text-5xl text-theme mb-4"
+                        class="font-script text-5xl text-[#4A1018] mb-4"
                     >
                         Mempelai
                     </h2>
 
+
                     <p
-                        class="text-gray-500 text-sm max-w-lg mx-auto"
+                        class="text-[#5A3A2E] text-sm max-w-lg mx-auto leading-relaxed"
                     >
                         Dengan memohon rahmat dan ridho Allah SWT,
                         kami mengundang Anda untuk hadir pada acara
@@ -822,8 +1434,9 @@
                 >
 
                     <!-- Groom -->
+
                     <div
-                        class="relative rounded-3xl overflow-hidden shadow-2xl group h-[500px]"
+                        class="relative rounded-3xl overflow-hidden shadow-2xl group h-[500px] border border-[#C6A15B]/30"
                         data-aos="fade-right"
                     >
 
@@ -834,24 +1447,27 @@
                             class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
                         >
 
+
                         <div
-                            class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent p-8 text-center text-white"
+                            class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#2B1A17]/95 via-[#4A1018]/75 to-transparent p-8 text-center"
                         >
 
                             <h3
-                                class="font-script text-4xl mb-2 text-theme-light"
+                                class="font-script text-4xl mb-2 text-[#F5EBDD]"
                             >
                                 Muhammad Kawakibul Anwar
                             </h3>
 
+
                             <p
-                                class="font-serif text-lg text-gray-300"
+                                class="font-serif text-lg text-[#DCC9A3]"
                             >
                                 Putra dari
                             </p>
 
+
                             <p
-                                class="text-sm font-light mt-1"
+                                class="text-sm font-light mt-1 text-[#F5EBDD]"
                             >
                                 Bapak Mintono
                                 <br>
@@ -864,8 +1480,9 @@
 
 
                     <!-- Bride -->
+
                     <div
-                        class="relative rounded-3xl overflow-hidden shadow-2xl group h-[500px]"
+                        class="relative rounded-3xl overflow-hidden shadow-2xl group h-[500px] border border-[#C6A15B]/30"
                         data-aos="fade-left"
                     >
 
@@ -876,24 +1493,27 @@
                             class="w-full h-full object-cover transition duration-700 group-hover:scale-110"
                         >
 
+
                         <div
-                            class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent p-8 text-center text-white"
+                            class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#2B1A17]/95 via-[#4A1018]/75 to-transparent p-8 text-center"
                         >
 
                             <h3
-                                class="font-script text-4xl mb-2 text-theme-light"
+                                class="font-script text-4xl mb-2 text-[#F5EBDD]"
                             >
                                 Fera Maulidya Putri
                             </h3>
 
+
                             <p
-                                class="font-serif text-lg text-gray-300"
+                                class="font-serif text-lg text-[#DCC9A3]"
                             >
                                 Putri dari
                             </p>
 
+
                             <p
-                                class="text-sm font-light mt-1"
+                                class="text-sm font-light mt-1 text-[#F5EBDD]"
                             >
                                 Bapak Nur Hadi
                                 <br>
@@ -916,336 +1536,677 @@
         ================================================== -->
 
         <section
-            id="event"
-            class="py-24 px-6 bg-white relative overflow-hidden"
+    id="event"
+    class="relative py-28 px-6 bg-[url('https://cdn.jsdelivr.net/gh/zakkimusyarrof/img-byzkk@main/fera.jpg')] bg-cover bg-center bg-fixed overflow-hidden"
+>
+
+
+    <!-- Overlay Maroon -->
+
+    <div
+        class="absolute inset-0 bg-[#2B1A17]/75 backdrop-blur-[2px]"
+    ></div>
+
+
+    <!-- Decorative -->
+
+    <div
+        class="absolute top-10 left-10 w-32 h-32 border border-[#C6A15B]/30 rounded-full"
+    ></div>
+
+
+    <div
+        class="absolute bottom-10 right-10 w-40 h-40 border border-[#C6A15B]/20 rounded-full"
+    ></div>
+
+
+
+    <div
+        class="relative z-10 max-w-md mx-auto text-center"
+    >
+
+
+        <!-- Main Card -->
+
+        <div
+            class="bg-white/10 backdrop-blur-xl rounded-[3rem] p-8 md:p-10 border border-[#C6A15B]/30 shadow-2xl text-[#F5EBDD]"
+            data-aos="zoom-in"
         >
 
+
+            <!-- Ring -->
+
             <div
-                class="max-w-3xl mx-auto text-center relative z-10"
+                class="mb-6"
             >
 
-                <h2
-                    class="font-script text-5xl text-theme mb-12"
-                    data-aos="fade-down"
-                >
-                    Detail Acara
-                </h2>
-
-
                 <div
-                    class="bg-theme text-white rounded-[2.5rem] p-8 md:p-12 shadow-2xl border-4 border-theme-light mb-16"
-                    data-aos="zoom-in"
+                    class="relative mx-auto w-20 h-20 flex items-center justify-center"
                 >
+
+                    <div
+                        class="absolute inset-0 rounded-full bg-[#C6A15B]/20 blur-xl"
+                    ></div>
+
 
                     <i
-                        class="fa-solid fa-ring text-4xl text-theme-light mb-6"
+                        class="fa-solid fa-ring text-5xl text-[#C6A15B] relative z-10"
                     ></i>
-
-                    <h3
-                        class="font-serif text-4xl font-bold mb-6 border-b border-white/20 pb-6"
-                    >
-                        Akad &amp; Resepsi
-                    </h3>
-
-
-                    <div class="space-y-4 mb-8">
-
-                        <p
-                            class="text-xl font-medium tracking-wide"
-                        >
-                            Sabtu, 10 Oktober 2026
-                        </p>
-
-                        <p
-                            class="text-lg opacity-90"
-                        >
-                            <i
-                                class="fa-regular fa-clock mr-2"
-                            ></i>
-
-                            09.00 WIB - Selesai
-                        </p>
-
-                    </div>
-
-
-                    <div
-                        class="bg-black/20 rounded-2xl p-6 mb-8"
-                    >
-
-                        <h4
-                            class="font-bold text-xl mb-2"
-                        >
-                            Ds. Kelet RT 34 rw 05, Kec. Keling, Kab. Jepara
-                        </h4>
-
-                    </div>
-
-
-                    <div
-                        class="flex flex-col sm:flex-row justify-center gap-4"
-                    >
-
-                        <a
-                            href="https://maps.app.goo.gl/v2ZJs8Jak1FUsG9Y9?g_st=iw"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="bg-white text-theme hover:bg-gray-100 px-6 py-3 rounded-full font-semibold transition flex items-center justify-center gap-2"
-                        >
-
-                            <i
-                                class="fa-solid fa-map-location-dot"
-                            ></i>
-
-                            Lihat Lokasi
-
-                        </a>
-
-
-                        <a
-                            href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Pernikahan+Fera+%26+Anwar&dates=20261010T060000Z/20261010T120000Z&details=Acara+pernikahan+kami&location=Kelet+RT34+RW05+Keling+Jepara"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="bg-transparent border border-white hover:bg-white/10 px-6 py-3 rounded-full font-semibold transition flex items-center justify-center gap-2"
-                        >
-
-                            <i
-                                class="fa-regular fa-calendar-plus"
-                            ></i>
-
-                            Tambah Kalender
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Countdown -->
-
-                <div data-aos="fade-up">
-
-                    <h3
-                        class="font-serif text-2xl text-gray-700 mb-6"
-                    >
-                        Menuju Hari Bahagia
-                    </h3>
-
-
-                    <div
-                        class="flex justify-center gap-4 md:gap-6"
-                    >
-
-                        <div
-                            class="bg-bg w-20 h-20 md:w-24 md:h-24 rounded-2xl shadow-md flex flex-col justify-center items-center border border-theme/20"
-                        >
-
-                            <span
-                                id="cd-days"
-                                class="font-serif text-3xl font-bold text-theme"
-                            >
-                                00
-                            </span>
-
-                            <span
-                                class="text-xs text-gray-500 uppercase tracking-wider mt-1"
-                            >
-                                Hari
-                            </span>
-
-                        </div>
-
-
-                        <div
-                            class="bg-bg w-20 h-20 md:w-24 md:h-24 rounded-2xl shadow-md flex flex-col justify-center items-center border border-theme/20"
-                        >
-
-                            <span
-                                id="cd-hours"
-                                class="font-serif text-3xl font-bold text-theme"
-                            >
-                                00
-                            </span>
-
-                            <span
-                                class="text-xs text-gray-500 uppercase tracking-wider mt-1"
-                            >
-                                Jam
-                            </span>
-
-                        </div>
-
-
-                        <div
-                            class="bg-bg w-20 h-20 md:w-24 md:h-24 rounded-2xl shadow-md flex flex-col justify-center items-center border border-theme/20"
-                        >
-
-                            <span
-                                id="cd-mins"
-                                class="font-serif text-3xl font-bold text-theme"
-                            >
-                                00
-                            </span>
-
-                            <span
-                                class="text-xs text-gray-500 uppercase tracking-wider mt-1"
-                            >
-                                Menit
-                            </span>
-
-                        </div>
-
-
-                        <div
-                            class="bg-bg w-20 h-20 md:w-24 md:h-24 rounded-2xl shadow-md flex flex-col justify-center items-center border border-theme/20"
-                        >
-
-                            <span
-                                id="cd-secs"
-                                class="font-serif text-3xl font-bold text-theme"
-                            >
-                                00
-                            </span>
-
-                            <span
-                                class="text-xs text-gray-500 uppercase tracking-wider mt-1"
-                            >
-                                Detik
-                            </span>
-
-                        </div>
-
-                    </div>
 
                 </div>
 
             </div>
 
-        </section>
+
+
+
+            <p
+                class="uppercase tracking-[0.35em] text-xs text-[#DCC9A3] mb-5"
+            >
+                Save The Date
+            </p>
+
+
+
+            <!-- MAIN DATE -->
+
+            <h2
+                class="font-serif text-[5rem] md:text-[6rem] leading-none font-bold text-[#C6A15B] drop-shadow-lg mb-5"
+            >
+                10.10.26
+            </h2>
+
+
+
+            <!-- Full Date -->
+
+            <div
+                class="mb-8"
+            >
+
+                <p
+                    class="font-serif text-2xl text-[#F5EBDD]"
+                >
+                    Sabtu,
+                </p>
+
+
+                <p
+                    class="font-serif text-2xl text-[#F5EBDD]"
+                >
+                    10 Oktober 2026
+                </p>
+
+
+            </div>
+
+
+
+            <!-- Divider -->
+
+            <div
+                class="flex items-center justify-center gap-3 mb-8"
+            >
+
+                <span
+                    class="w-12 h-px bg-[#C6A15B]/50"
+                ></span>
+
+
+                <span
+                    class="text-[#C6A15B]"
+                >
+                    ✦
+                </span>
+
+
+                <span
+                    class="w-12 h-px bg-[#C6A15B]/50"
+                ></span>
+
+            </div>
+
+
+
+
+            <!-- Event Type -->
+
+            <h3
+                class="font-serif text-3xl text-[#F5EBDD] mb-3"
+            >
+                Akad &amp; Resepsi
+            </h3>
+
+
+            <p
+                class="text-[#DCC9A3] text-sm mb-8"
+            >
+                09.00 WIB - Selesai
+            </p>
+
+
+
+
+
+            <!-- Location -->
+
+            <div
+                class="bg-[#2B1A17]/40 rounded-2xl p-5 border border-[#C6A15B]/20 mb-8"
+            >
+
+                <i
+                    class="fa-solid fa-location-dot text-[#C6A15B] text-xl mb-3"
+                ></i>
+
+
+                <p
+                    class="text-[#F5EBDD] leading-relaxed text-sm"
+                >
+                    Ds. Kelet RT 34 RW 05
+                    <br>
+                    Kec. Keling, Kab. Jepara
+                </p>
+
+            </div>
+
+
+
+
+            <!-- Button -->
+
+            <a
+                href="https://maps.app.goo.gl/v2ZJs8Jak1FUsG9Y9?g_st=iw"
+                target="_blank"
+                class="block w-full bg-[#681C27] hover:bg-[#C6A15B] hover:text-[#2B1A17] text-[#FAF8F2] py-4 rounded-full font-semibold transition-all duration-300 shadow-lg"
+            >
+
+                <i
+                    class="fa-solid fa-map-location-dot mr-2"
+                ></i>
+
+                Buka Google Maps
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+    <!-- COUNTDOWN -->
+
+    <div
+        class="relative z-10 mt-16 flex justify-center gap-2 sm:gap-4"
+        data-aos="fade-up"
+    >
+
+
+        <div
+            class="w-[75px] sm:w-[90px] bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl py-4 text-center text-white"
+        >
+
+            <span
+                id="cd-days"
+                class="block text-3xl sm:text-4xl font-serif font-bold text-[#C6A15B]"
+            >
+                00
+            </span>
+
+
+            <span
+                class="text-[10px] uppercase tracking-widest text-[#DCC9A3]"
+            >
+                Hari
+            </span>
+
+        </div>
+
+
+
+
+        <div
+            class="w-[75px] sm:w-[90px] bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl py-4 text-center text-white"
+        >
+
+            <span
+                id="cd-hours"
+                class="block text-3xl sm:text-4xl font-serif font-bold text-[#C6A15B]"
+            >
+                00
+            </span>
+
+
+            <span
+                class="text-[10px] uppercase tracking-widest text-[#DCC9A3]"
+            >
+                Jam
+            </span>
+
+        </div>
+
+
+
+
+        <div
+            class="w-[75px] sm:w-[90px] bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl py-4 text-center text-white"
+        >
+
+            <span
+                id="cd-mins"
+                class="block text-3xl sm:text-4xl font-serif font-bold text-[#C6A15B]"
+            >
+                00
+            </span>
+
+
+            <span
+                class="text-[10px] uppercase tracking-widest text-[#DCC9A3]"
+            >
+                Menit
+            </span>
+
+        </div>
+
+
+
+
+        <div
+            class="w-[75px] sm:w-[90px] bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl py-4 text-center text-white"
+        >
+
+            <span
+                id="cd-secs"
+                class="block text-3xl sm:text-4xl font-serif font-bold text-[#C6A15B]"
+            >
+                00
+            </span>
+
+
+            <span
+                class="text-[10px] uppercase tracking-widest text-[#DCC9A3]"
+            >
+                Detik
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+</section>
 
 
         <!-- =================================================
-             GALLERY
-        ================================================== -->
+     GALLERY
+================================================== -->
 
-        <section
-            id="gallery"
-            class="py-24 px-6 bg-bg"
+<section
+    id="gallery"
+    class="py-24 px-4 sm:px-6 bg-[#F5EBDD] overflow-hidden"
+>
+
+    <div
+        class="max-w-5xl mx-auto"
+    >
+
+        <!-- Gallery Heading -->
+
+        <div
+            class="text-center mb-12"
+            data-aos="fade-down"
         >
 
             <div
-                class="max-w-5xl mx-auto text-center"
+                class="flex justify-center items-center gap-3 mb-4"
             >
 
-                <h2
-                    class="font-script text-5xl text-theme mb-12"
-                    data-aos="fade-down"
+                <span
+                    class="w-10 h-px bg-[#C6A15B]/60"
+                ></span>
+
+                <span
+                    class="text-[#C6A15B]"
                 >
-                    Galeri Momen
-                </h2>
+                    ✦
+                </span>
 
-
-                <div
-                    class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px]"
-                >
-
-                    <div
-                        class="col-span-2 row-span-2 rounded-2xl overflow-hidden shadow"
-                        data-aos="zoom-in"
-                        data-aos-delay="100"
-                    >
-
-                        <img
-                            src="https://cdn.jsdelivr.net/gh/zakkimusyarrof/img-byzkk@main/fera2.JPG"
-                            loading="lazy"
-                            class="w-full h-full object-cover hover:scale-110 transition duration-500"
-                            alt="Galeri pernikahan"
-                        >
-
-                    </div>
-
-
-                    <div
-                        class="rounded-2xl overflow-hidden shadow"
-                        data-aos="zoom-in"
-                        data-aos-delay="200"
-                    >
-
-                        <img
-                            src="https://cdn.jsdelivr.net/gh/zakkimusyarrof/img-byzkk@main/fera8.jpg"
-                            loading="lazy"
-                            class="w-full h-full object-cover hover:scale-110 transition duration-500"
-                            alt="Galeri pernikahan"
-                        >
-
-                    </div>
-
-
-                    <div
-                        class="rounded-2xl overflow-hidden shadow"
-                        data-aos="zoom-in"
-                        data-aos-delay="300"
-                    >
-
-                        <img
-                            src="https://cdn.jsdelivr.net/gh/zakkimusyarrof/img-byzkk@main/fera6.jpg"
-                            loading="lazy"
-                            class="w-full h-full object-cover hover:scale-110 transition duration-500"
-                            alt="Galeri pernikahan"
-                        >
-
-                    </div>
-
-
-                    <div
-                        class="col-span-2 rounded-2xl overflow-hidden shadow"
-                        data-aos="zoom-in"
-                        data-aos-delay="400"
-                    >
-
-                        <img
-                            src="https://cdn.jsdelivr.net/gh/zakkimusyarrof/img-byzkk@main/fera5.JPG"
-                            loading="lazy"
-                            class="w-full h-full object-cover hover:scale-110 transition duration-500"
-                            alt="Galeri pernikahan"
-                        >
-
-                    </div>
-
-                </div>
+                <span
+                    class="w-10 h-px bg-[#C6A15B]/60"
+                ></span>
 
             </div>
 
-        </section>
+
+            <p
+                class="text-[11px] uppercase tracking-[0.25em] text-[#C6A15B] mb-2"
+            >
+                Our Moments
+            </p>
 
 
+            <h2
+                class="font-script text-5xl md:text-6xl text-[#4A1018] mb-4"
+            >
+                Galeri Momen
+            </h2>
+
+
+            <p
+                class="text-sm text-[#5A3A2E] max-w-xl mx-auto leading-relaxed"
+            >
+                Beberapa potret yang menjadi bagian dari
+                perjalanan dan cerita bahagia kami.
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             MAIN AUTO SLIDER
+        ================================================== -->
+
+        <div
+            id="wedding-gallery-slider"
+            class="relative group mb-6"
+            data-aos="zoom-in"
+        >
+
+            <!-- Main Image Container -->
+
+            <div
+                class="relative w-full aspect-[4/5] sm:aspect-[16/10] md:aspect-[16/9] rounded-[2rem] overflow-hidden bg-[#2B1A17] shadow-2xl border border-[#C6A15B]/40"
+            >
+
+                <img
+    id="gallery-main-image"
+    src=""
+    alt="Galeri pernikahan Fera dan Anwar"
+    class="absolute inset-0 w-full h-full object-cover transition-all duration-700 cursor-zoom-in"
+>
+
+
+                <!-- Gradient -->
+
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-[#2B1A17]/65 via-transparent to-transparent pointer-events-none"
+                ></div>
+
+
+                <!-- Counter -->
+
+                <div
+                    class="absolute top-5 right-5 bg-[#2B1A17]/60 backdrop-blur-md border border-[#C6A15B]/30 text-[#F5EBDD] text-xs px-4 py-2 rounded-full"
+                >
+
+                    <span
+                        id="gallery-current-number"
+                    >
+                        01
+                    </span>
+
+                    <span
+                        class="text-[#C6A15B] mx-1"
+                    >
+                        /
+                    </span>
+
+                    <span>
+                        08
+                    </span>
+
+                </div>
+
+
+                <!-- Caption -->
+
+                <div
+                    class="absolute bottom-0 left-0 right-0 p-6 sm:p-8 text-left"
+                >
+
+                    <p
+                        id="gallery-main-caption"
+                        class="text-[#DCC9A3] text-[10px] sm:text-xs uppercase tracking-[0.22em] mb-1"
+                    >
+                        Our Story
+                    </p>
+
+
+                    <p
+                        id="gallery-main-title"
+                        class="font-serif text-xl sm:text-2xl text-[#F5EBDD]"
+                    >
+                        Fera &amp; Anwar
+                    </p>
+
+                </div>
+
+
+                <!-- Previous Button -->
+
+                <button
+                    id="gallery-prev"
+                    type="button"
+                    aria-label="Foto sebelumnya"
+                    class="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#2B1A17]/60 backdrop-blur-md border border-[#C6A15B]/40 text-[#F5EBDD] hover:bg-[#C6A15B] hover:text-[#2B1A17] transition-all duration-300 flex items-center justify-center"
+                >
+
+                    <i
+                        class="fa-solid fa-chevron-left"
+                    ></i>
+
+                </button>
+
+
+                <!-- Next Button -->
+
+                <button
+                    id="gallery-next"
+                    type="button"
+                    aria-label="Foto berikutnya"
+                    class="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#2B1A17]/60 backdrop-blur-md border border-[#C6A15B]/40 text-[#F5EBDD] hover:bg-[#C6A15B] hover:text-[#2B1A17] transition-all duration-300 flex items-center justify-center"
+                >
+
+                    <i
+                        class="fa-solid fa-chevron-right"
+                    ></i>
+
+                </button>
+
+            </div>
+
+
+            <!-- =================================================
+                 PROGRESS BAR
+            ================================================== -->
+
+            <div
+                class="mt-4 h-[2px] bg-[#C6A15B]/20 rounded-full overflow-hidden"
+            >
+
+                <div
+                    id="gallery-progress"
+                    class="h-full bg-[#C6A15B] origin-left"
+                ></div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             8 CONNECTED PLACEHOLDERS / THUMBNAILS
+        ================================================== -->
+
+        <div
+            id="gallery-thumbnails"
+            class="grid grid-cols-4 md:grid-cols-8 gap-2 sm:gap-3"
+            data-aos="fade-up"
+        >
+
+            <!--
+                8 thumbnail akan dibuat otomatis
+                melalui JavaScript.
+            -->
+
+        </div>
+
+
+        <!-- Slider Dots -->
+
+        <div
+            id="gallery-dots"
+            class="flex justify-center items-center gap-2 mt-7"
+        ></div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     GALLERY LIGHTBOX / POPUP
+====================================================== -->
+
+<div
+    id="gallery-lightbox"
+    class="fixed inset-0 z-[150] hidden items-center justify-center bg-[#2B1A17]/95 backdrop-blur-md px-4 py-6 opacity-0 transition-opacity duration-300"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Galeri foto"
+>
+
+    <!-- Close -->
+    <button
+        id="gallery-lightbox-close"
+        type="button"
+        class="absolute top-5 right-5 z-20 w-11 h-11 rounded-full bg-[#F5EBDD]/10 border border-[#C6A15B]/40 text-[#F5EBDD] hover:bg-[#C6A15B] hover:text-[#2B1A17] transition flex items-center justify-center"
+        aria-label="Tutup foto"
+    >
+        <i class="fa-solid fa-xmark text-xl"></i>
+    </button>
+
+
+    <!-- Counter -->
+    <div
+        class="absolute top-6 left-1/2 -translate-x-1/2 z-20 bg-[#2B1A17]/70 border border-[#C6A15B]/30 px-4 py-2 rounded-full text-xs text-[#F5EBDD]"
+    >
+        <span id="lightbox-current">01</span>
+
+        <span class="text-[#C6A15B] mx-1">
+            /
+        </span>
+
+        <span id="lightbox-total">08</span>
+    </div>
+
+
+    <!-- Previous -->
+    <button
+        id="gallery-lightbox-prev"
+        type="button"
+        class="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-20 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#F5EBDD]/10 border border-[#C6A15B]/40 text-[#F5EBDD] hover:bg-[#C6A15B] hover:text-[#2B1A17] transition flex items-center justify-center"
+        aria-label="Foto sebelumnya"
+    >
+        <i class="fa-solid fa-chevron-left"></i>
+    </button>
+
+
+    <!-- Image Area -->
+    <div
+        id="gallery-lightbox-content"
+        class="relative max-w-6xl w-full flex flex-col items-center justify-center"
+    >
+
+        <img
+            id="gallery-lightbox-image"
+            src=""
+            alt="Foto galeri Fera dan Anwar"
+            class="max-w-full max-h-[78vh] object-contain rounded-2xl shadow-2xl border border-[#C6A15B]/25 select-none transition-transform duration-300"
+            draggable="false"
+        >
+
+
+        <!-- Caption -->
+        <div
+            class="text-center mt-5 px-4"
+        >
+
+            <p
+                id="gallery-lightbox-caption"
+                class="text-[10px] sm:text-xs uppercase tracking-[0.22em] text-[#C6A15B] mb-1"
+            >
+                Our Story
+            </p>
+
+            <p
+                id="gallery-lightbox-title"
+                class="font-serif text-xl sm:text-2xl text-[#F5EBDD]"
+            >
+                Fera &amp; Anwar
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Next -->
+    <button
+        id="gallery-lightbox-next"
+        type="button"
+        class="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-20 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#F5EBDD]/10 border border-[#C6A15B]/40 text-[#F5EBDD] hover:bg-[#C6A15B] hover:text-[#2B1A17] transition flex items-center justify-center"
+        aria-label="Foto berikutnya"
+    >
+        <i class="fa-solid fa-chevron-right"></i>
+    </button>
+
+</div>
+        
         <!-- =================================================
              DIGITAL GIFT
         ================================================== -->
 
         <section
             id="gift"
-            class="py-20 px-6 bg-theme-light text-center"
+            class="py-24 px-6 bg-[#4A1018] text-center relative overflow-hidden"
         >
 
+            <!-- Decorative Lines -->
+
             <div
-                class="max-w-2xl mx-auto"
+                class="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-px bg-[#C6A15B]"
+            ></div>
+
+
+            <div
+                class="max-w-2xl mx-auto relative z-10"
                 data-aos="fade-up"
             >
 
                 <i
-                    class="fa-solid fa-gift text-4xl text-theme mb-4"
+                    class="fa-solid fa-gift text-4xl text-[#C6A15B] mb-5"
                 ></i>
 
+
                 <h2
-                    class="font-script text-5xl text-theme mb-4"
+                    class="font-script text-5xl text-[#F5EBDD] mb-4"
                 >
                     Kirim Hadiah
                 </h2>
 
+
+                <div
+                    class="w-12 h-px bg-[#C6A15B]/70 mx-auto mb-6"
+                ></div>
+
+
                 <p
-                    class="text-sm text-gray-600 mb-8 leading-relaxed"
+                    class="text-sm text-[#DCC9A3] mb-8 leading-relaxed max-w-xl mx-auto"
                 >
                     Doa restu Anda merupakan karunia yang sangat
                     berarti bagi kami. Namun jika Anda bermaksud
@@ -1256,7 +2217,7 @@
 
                 <button
                     onclick="toggleModal('gift-modal')"
-                    class="bg-theme hover:bg-theme-dark text-white px-8 py-3 rounded-full shadow-lg font-semibold transition flex items-center justify-center mx-auto gap-2"
+                    class="bg-[#681C27] hover:bg-[#C6A15B] hover:text-[#2B1A17] text-[#FAF8F2] px-8 py-3 rounded-full shadow-xl font-semibold transition-all duration-300 flex items-center justify-center mx-auto gap-2"
                 >
 
                     <i
@@ -1278,24 +2239,48 @@
 
         <section
             id="wishes"
-            class="py-24 px-6 bg-white"
+            class="py-24 px-6 bg-[#F5EBDD]"
         >
 
-            <div class="max-w-3xl mx-auto">
+            <div
+                class="max-w-3xl mx-auto"
+            >
 
                 <div
                     class="text-center mb-12"
                     data-aos="fade-down"
                 >
 
+                    <div
+                        class="flex justify-center items-center gap-3 mb-4"
+                    >
+
+                        <span
+                            class="w-10 h-px bg-[#C6A15B]/60"
+                        ></span>
+
+                        <span
+                            class="text-[#C6A15B]"
+                        >
+                            ✦
+                        </span>
+
+                        <span
+                            class="w-10 h-px bg-[#C6A15B]/60"
+                        ></span>
+
+                    </div>
+
+
                     <h2
-                        class="font-script text-5xl text-theme mb-4"
+                        class="font-script text-5xl text-[#4A1018] mb-4"
                     >
                         Ucapan &amp; Kehadiran
                     </h2>
 
+
                     <p
-                        class="text-sm text-gray-500"
+                        class="text-sm text-[#5A3A2E]"
                     >
                         Silakan konfirmasi kehadiran dan berikan
                         doa restu Anda.
@@ -1305,7 +2290,7 @@
 
 
                 <div
-                    class="bg-bg p-8 rounded-3xl shadow-lg border border-theme/10"
+                    class="bg-[#FAF8F2] p-6 md:p-8 rounded-3xl shadow-xl border border-[#C6A15B]/30"
                     data-aos="fade-up"
                 >
 
@@ -1314,40 +2299,48 @@
                         class="space-y-5 mb-10"
                     >
 
+                        <!-- Name -->
+
                         <div>
 
                             <label
-                                class="block text-sm font-medium text-gray-700 mb-1"
+                                class="block text-sm font-medium text-[#5A3A2E] mb-2"
                             >
                                 Nama Anda
                             </label>
+
 
                             <input
                                 type="text"
                                 id="wish-name"
                                 required
-                                class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-theme focus:ring-1 focus:ring-theme bg-white"
+                                autocomplete="name"
+                                class="w-full border border-[#C6A15B]/50 rounded-xl px-4 py-3 text-[#5A3A2E] focus:outline-none focus:border-[#681C27] focus:ring-1 focus:ring-[#681C27] bg-[#F5EBDD]"
                             >
 
                         </div>
 
 
+                        <!-- RSVP -->
+
                         <div>
 
                             <label
-                                class="block text-sm font-medium text-gray-700 mb-1"
+                                class="block text-sm font-medium text-[#5A3A2E] mb-2"
                             >
                                 Konfirmasi Kehadiran
                             </label>
 
+
                             <select
                                 id="wish-rsvp"
-                                class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-theme text-gray-700 bg-white"
+                                class="w-full border border-[#C6A15B]/50 rounded-xl px-4 py-3 focus:outline-none focus:border-[#681C27] focus:ring-1 focus:ring-[#681C27] text-[#5A3A2E] bg-[#F5EBDD]"
                             >
 
                                 <option value="Hadir">
                                     Ya, Saya akan hadir
                                 </option>
+
 
                                 <option value="Tidak Hadir">
                                     Maaf, Saya tidak bisa hadir
@@ -1358,27 +2351,32 @@
                         </div>
 
 
+                        <!-- Message -->
+
                         <div>
 
                             <label
-                                class="block text-sm font-medium text-gray-700 mb-1"
+                                class="block text-sm font-medium text-[#5A3A2E] mb-2"
                             >
                                 Ucapan &amp; Doa
                             </label>
+
 
                             <textarea
                                 id="wish-msg"
                                 rows="4"
                                 required
-                                class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-theme focus:ring-1 focus:ring-theme bg-white"
+                                class="w-full border border-[#C6A15B]/50 rounded-xl px-4 py-3 text-[#5A3A2E] focus:outline-none focus:border-[#681C27] focus:ring-1 focus:ring-[#681C27] bg-[#F5EBDD] resize-none"
                             ></textarea>
 
                         </div>
 
 
+                        <!-- Submit -->
+
                         <button
                             type="submit"
-                            class="w-full bg-theme hover:bg-theme-dark text-white rounded-xl py-4 font-bold tracking-wide transition shadow-md"
+                            class="w-full bg-theme hover:bg-[#C6A15B] hover:text-[#2B1A17] text-[#FAF8F2] rounded-xl py-4 font-bold tracking-wide transition-all duration-300 shadow-md"
                         >
                             Kirim Ucapan
                         </button>
@@ -1387,7 +2385,7 @@
 
 
                     <h3
-                        class="font-serif text-2xl mb-4 text-gray-800 border-b pb-2"
+                        class="font-serif text-2xl mb-4 text-[#4A1018] border-b border-[#C6A15B]/30 pb-3"
                     >
                         Doa dari Sahabat
                     </h3>
@@ -1399,11 +2397,11 @@
                     >
 
                         <div
-                            class="text-center py-4 text-gray-500"
+                            class="text-center py-4 text-[#5A3A2E]/70"
                         >
 
                             <i
-                                class="fa-solid fa-spinner fa-spin mr-2"
+                                class="fa-solid fa-spinner fa-spin mr-2 text-[#C6A15B]"
                             ></i>
 
                             Memuat ucapan...
@@ -1424,7 +2422,7 @@
         ================================================== -->
 
         <footer
-            class="py-14 bg-black text-center relative overflow-hidden"
+            class="py-16 bg-[#2B1A17] text-center relative overflow-hidden"
         >
 
             <div
@@ -1432,38 +2430,40 @@
             >
 
                 <span
-                    class="w-12 h-px bg-[#d3af8e]/40"
+                    class="w-12 h-px bg-[#C6A15B]/50"
                 ></span>
 
+
                 <span
-                    class="text-[#d3af8e] text-sm"
+                    class="text-[#C6A15B] text-sm"
                 >
                     ✦
                 </span>
 
+
                 <span
-                    class="w-12 h-px bg-[#d3af8e]/40"
+                    class="w-12 h-px bg-[#C6A15B]/50"
                 ></span>
 
             </div>
 
 
             <p
-                class="text-[11px] tracking-[0.3em] uppercase text-[#d3af8e] mb-3"
+                class="text-[11px] tracking-[0.3em] uppercase text-[#C6A15B] mb-3"
             >
                 Terima Kasih
             </p>
 
 
             <h2
-                class="font-script text-5xl text-white mb-4"
+                class="font-script text-5xl text-[#F5EBDD] mb-4"
             >
                 Fera &amp; Anwar
             </h2>
 
 
             <p
-                class="text-sm leading-7 text-gray-400 max-w-md mx-auto px-6 mb-7"
+                class="text-sm leading-7 text-[#DCC9A3] max-w-md mx-auto px-6 mb-7"
             >
                 Merupakan suatu kehormatan dan kebahagiaan bagi kami
                 apabila Bapak/Ibu/Saudara/i berkenan hadir dan
@@ -1472,7 +2472,7 @@
 
 
             <p
-                class="font-serif italic text-sm text-gray-300 px-6 mb-8"
+                class="font-serif italic text-sm text-[#F5EBDD]/80 px-6 mb-8"
             >
                 “Semoga Allah menjadikan pernikahan ini penuh sakinah,
                 mawaddah, wa rahmah.”
@@ -1480,24 +2480,26 @@
 
 
             <div
-                class="text-[#d3af8e] text-xs tracking-[0.25em] italic mb-8"
+                class="text-[#C6A15B] text-xs tracking-[0.25em] italic mb-8"
             >
                 Wassalamualaikum Wr. Wb.
             </div>
 
 
             <div
-                class="w-16 h-px bg-[#d3af8e]/30 mx-auto mb-6"
+                class="w-16 h-px bg-[#C6A15B]/30 mx-auto mb-6"
             ></div>
 
 
             <p
-                class="credit text-xs text-gray-500 tracking-wide"
+                class="credit text-xs text-[#DCC9A3]/50 tracking-wide"
             >
 
                 © 2026 · Made with
 
-                <span class="text-red-400">
+                <span
+                    class="text-[#C6A15B]"
+                >
                     ♥
                 </span>
 
@@ -1507,7 +2509,7 @@
                     href="https://www.instagram.com/zakkimusyarrof"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="text-[#d3af8e] font-medium hover:text-white transition-colors duration-300"
+                    class="text-[#C6A15B] font-medium hover:text-[#F5EBDD] transition-colors duration-300"
                 >
                     @zakkimusyarrof
                 </a>
@@ -1520,64 +2522,248 @@
 
 
     <!-- =====================================================
-         GIFT MODAL
-    ====================================================== -->
+     GIFT MODAL
+====================================================== -->
+
+<div
+    id="gift-modal"
+    class="fixed inset-0 z-[110] bg-[#2B1A17]/80 hidden flex-col items-center justify-center px-4 opacity-0 transition-opacity duration-300 backdrop-blur-sm"
+>
 
     <div
-        id="gift-modal"
-        class="fixed inset-0 z-[110] bg-black/60 hidden flex-col items-center justify-center px-4 opacity-0 transition-opacity duration-300"
+        id="gift-modal-content"
+        class="bg-[#F5EBDD] rounded-3xl w-full max-w-md p-6 md:p-8 relative transform scale-95 transition-transform duration-300 shadow-2xl border border-[#C6A15B]/40 max-h-[90vh] overflow-y-auto"
     >
 
-        <div
-            id="gift-modal-content"
-            class="bg-white rounded-3xl w-full max-w-sm p-8 relative transform scale-95 transition-transform duration-300 shadow-2xl"
+        <!-- Close Button -->
+        <button
+            onclick="toggleModal('gift-modal')"
+            class="absolute top-5 right-5 text-[#5A3A2E] hover:text-[#F5EBDD] hover:bg-[#681C27] bg-[#DCC9A3]/40 rounded-full w-8 h-8 flex justify-center items-center transition"
+            aria-label="Tutup"
         >
+            <i class="fa-solid fa-xmark"></i>
+        </button>
 
-            <button
-                onclick="toggleModal('gift-modal')"
-                class="absolute top-5 right-5 text-gray-400 hover:text-gray-800 bg-gray-100 rounded-full w-8 h-8 flex justify-center items-center"
-                aria-label="Tutup"
-            >
 
-                <i class="fa-solid fa-xmark"></i>
+        <!-- Heading -->
+        <div class="text-center mb-7">
 
-            </button>
-
+            <i
+                class="fa-solid fa-gift text-3xl text-[#C6A15B] mb-3"
+            ></i>
 
             <h3
-                class="font-script text-4xl text-center text-theme mb-6 mt-2"
+                class="font-script text-4xl text-[#4A1018] mb-2"
             >
                 Amplop Digital
             </h3>
 
-
             <div
-                class="bg-bg p-5 rounded-2xl mb-4 border border-theme/20 text-center"
+                class="w-12 h-px bg-[#C6A15B] mx-auto mb-4"
+            ></div>
+
+            <p
+                class="text-sm text-[#5A3A2E] leading-relaxed"
+            >
+                Bagi Bapak/Ibu/Saudara/i yang ingin memberikan
+                tanda kasih, dapat melalui rekening berikut.
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             M. KAWAKIBUL ANWAR
+        ================================================== -->
+
+        <div class="mb-7">
+
+            <p
+                class="text-center text-[11px] uppercase tracking-[0.18em] text-[#C6A15B] mb-3"
+            >
+                M. Kawakibul Anwar
+            </p>
+
+
+            <!-- SeaBank Anwar -->
+            <div
+                class="bg-[#FAF8F2] p-5 rounded-2xl mb-4 border border-[#C6A15B]/40 text-center shadow-sm"
             >
 
-                <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Bank-Rakyat-Indonesia-Logo.svg"
-                    alt="BRI"
-                    class="h-6 mx-auto mb-3"
+                <div
+                    class="flex items-center justify-center gap-2 mb-3"
                 >
+                    <i
+                        class="fa-solid fa-building-columns text-[#C6A15B]"
+                    ></i>
+
+                    <p
+                        class="font-semibold text-[#4A1018] tracking-wide"
+                    >
+                        SeaBank
+                    </p>
+                </div>
+
 
                 <p
-                    class="font-mono text-2xl text-gray-800 font-bold mb-1 tracking-wider"
-                    id="rek-pria"
+                    id="rek-seabank-anwar"
+                    class="font-mono text-2xl text-[#4A1018] font-bold mb-2 tracking-wider"
                 >
                     901743640749
                 </p>
 
+
                 <p
-                    class="text-sm text-gray-500 mb-4"
+                    class="text-sm text-[#5A3A2E] mb-5"
                 >
                     a.n. M. Kawakibul Anwar
                 </p>
 
 
                 <button
-                    onclick="copyText('rek-pria', this)"
-                    class="bg-theme hover:bg-theme-dark text-white text-sm px-5 py-2 rounded-full w-full transition"
+                    onclick="copyText('rek-seabank-anwar', this)"
+                    class="bg-theme hover:bg-[#C6A15B] hover:text-[#2B1A17] text-[#FAF8F2] text-sm px-5 py-2.5 rounded-full w-full transition-all duration-300"
+                >
+
+                    <i
+                        class="fa-regular fa-copy mr-1"
+                    ></i>
+
+                    Salin Nomor Rekening
+
+                </button>
+
+            </div>
+
+
+            <!-- BNI Anwar -->
+            <div
+                class="bg-[#FAF8F2] p-5 rounded-2xl border border-[#C6A15B]/40 text-center shadow-sm"
+            >
+
+                <div
+                    class="flex items-center justify-center gap-2 mb-3"
+                >
+                    <i
+                        class="fa-solid fa-building-columns text-[#C6A15B]"
+                    ></i>
+
+                    <p
+                        class="font-semibold text-[#4A1018] tracking-wide"
+                    >
+                        BNI
+                    </p>
+                </div>
+
+
+                <p
+                    id="rek-bni-anwar"
+                    class="font-mono text-2xl text-[#4A1018] font-bold mb-2 tracking-wider"
+                >
+                    1929485552
+                </p>
+
+
+                <p
+                    class="text-sm text-[#5A3A2E] mb-5"
+                >
+                    a.n. M. Kawakibul Anwar
+                </p>
+
+
+                <button
+                    onclick="copyText('rek-bni-anwar', this)"
+                    class="bg-theme hover:bg-[#C6A15B] hover:text-[#2B1A17] text-[#FAF8F2] text-sm px-5 py-2.5 rounded-full w-full transition-all duration-300"
+                >
+
+                    <i
+                        class="fa-regular fa-copy mr-1"
+                    ></i>
+
+                    Salin Nomor Rekening
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Divider -->
+        <div
+            class="flex items-center gap-3 mb-7"
+        >
+
+            <span
+                class="flex-1 h-px bg-[#C6A15B]/30"
+            ></span>
+
+            <span
+                class="text-[#C6A15B] text-xs"
+            >
+                ✦
+            </span>
+
+            <span
+                class="flex-1 h-px bg-[#C6A15B]/30"
+            ></span>
+
+        </div>
+
+
+        <!-- =================================================
+             FERA MAULIDYA PUTRI
+        ================================================== -->
+
+        <div>
+
+            <p
+                class="text-center text-[11px] uppercase tracking-[0.18em] text-[#C6A15B] mb-3"
+            >
+                Fera Maulidya Putri
+            </p>
+
+
+            <!-- SeaBank Fera -->
+            <div
+                class="bg-[#FAF8F2] p-5 rounded-2xl border border-[#C6A15B]/40 text-center shadow-sm"
+            >
+
+                <div
+                    class="flex items-center justify-center gap-2 mb-3"
+                >
+
+                    <i
+                        class="fa-solid fa-building-columns text-[#C6A15B]"
+                    ></i>
+
+                    <p
+                        class="font-semibold text-[#4A1018] tracking-wide"
+                    >
+                        SeaBank
+                    </p>
+
+                </div>
+
+
+                <p
+                    id="rek-seabank-fera"
+                    class="font-mono text-2xl text-[#4A1018] font-bold mb-2 tracking-wider"
+                >
+                    901563055686
+                </p>
+
+
+                <p
+                    class="text-sm text-[#5A3A2E] mb-5"
+                >
+                    a.n. Fera Maulidya Putri
+                </p>
+
+
+                <button
+                    onclick="copyText('rek-seabank-fera', this)"
+                    class="bg-theme hover:bg-[#C6A15B] hover:text-[#2B1A17] text-[#FAF8F2] text-sm px-5 py-2.5 rounded-full w-full transition-all duration-300"
                 >
 
                     <i
@@ -1594,16 +2780,24 @@
 
     </div>
 
+</div>
+
 
     <!-- =====================================================
          JAVASCRIPT LIBRARIES
     ====================================================== -->
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script
+        src="https://unpkg.com/aos@2.3.1/dist/aos.js"
+    ></script>
 
-    <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+    <script
+        src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"
+    ></script>
 
-    <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>
+    <script
+        src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"
+    ></script>
 
 
     <!-- =====================================================
@@ -1616,8 +2810,11 @@
            GLOBAL
         ====================================================== */
 
-        let isPlaying = false;
-        let petalsStarted = false;
+        let isPlaying =
+            false;
+
+        let petalsStarted =
+            false;
 
 
         /* =====================================================
@@ -1627,21 +2824,36 @@
         function initApp() {
 
             AOS.init({
-                once: false,
-                duration: 1000,
-                offset: 50
+
+                once:
+                    false,
+
+                duration:
+                    1000,
+
+                offset:
+                    50
+
             });
 
 
-            /* Guest Name */
+            /* =================================================
+               GUEST NAME FROM URL
+               Example:
+               ?to=Bapak%20Zakki
+            ================================================= */
 
             const urlParams =
                 new URLSearchParams(
                     window.location.search
                 );
 
+
             const guest =
-                urlParams.get('to');
+                urlParams.get(
+                    'to'
+                );
+
 
             if (guest) {
 
@@ -1649,6 +2861,7 @@
                     document.getElementById(
                         'guest-name'
                     );
+
 
                 if (guestName) {
 
@@ -1673,15 +2886,18 @@
                     'cover-screen'
                 );
 
+
             const mainContent =
                 document.getElementById(
                     'main-content'
                 );
 
+
             const floating =
                 document.getElementById(
                     'floating-elements'
                 );
+
 
             const audio =
                 document.getElementById(
@@ -1689,16 +2905,23 @@
                 );
 
 
-            /* Music */
+            /* =================================================
+               MUSIC
+            ================================================= */
 
-            audio.play()
+            audio
+                .play()
+
                 .then(() => {
 
-                    isPlaying = true;
+                    isPlaying =
+                        true;
+
 
                     updateMusicIcon();
 
                 })
+
                 .catch(error => {
 
                     console.log(
@@ -1709,40 +2932,58 @@
                 });
 
 
-            /* Show Main */
+            /* =================================================
+               SHOW MAIN CONTENT
+            ================================================= */
 
-            mainContent.classList.remove(
-                'hidden'
-            );
-
-            floating.classList.remove(
-                'hidden'
-            );
+            mainContent
+                .classList
+                .remove(
+                    'hidden'
+                );
 
 
-            /* Move Cover */
+            floating
+                .classList
+                .remove(
+                    'hidden'
+                );
+
+
+            /* =================================================
+               MOVE COVER
+            ================================================= */
 
             cover.style.transform =
                 'translateY(-100%)';
 
 
-            document.body.classList.remove(
-                'no-scroll'
-            );
+            document.body
+                .classList
+                .remove(
+                    'no-scroll'
+                );
 
 
-            /* Start after animation */
+            /* =================================================
+               FINISH COVER ANIMATION
+            ================================================= */
 
             setTimeout(() => {
 
                 cover.style.display =
                     'none';
 
-                floating.classList.remove(
-                    'opacity-0'
-                );
+
+                floating
+                    .classList
+                    .remove(
+                        'opacity-0'
+                    );
+
 
                 AOS.refresh();
+
 
                 initFallingPetals();
 
@@ -1762,22 +3003,30 @@
                     'bg-music'
                 );
 
+
             if (isPlaying) {
 
                 audio.pause();
 
-                isPlaying = false;
+
+                isPlaying =
+                    false;
 
             } else {
 
-                audio.play()
+                audio
+                    .play()
+
                     .then(() => {
 
-                        isPlaying = true;
+                        isPlaying =
+                            true;
+
 
                         updateMusicIcon();
 
                     })
+
                     .catch(error => {
 
                         console.log(
@@ -1787,9 +3036,11 @@
 
                     });
 
+
                 return;
 
             }
+
 
             updateMusicIcon();
 
@@ -1803,18 +3054,23 @@
                     '#music-btn i'
                 );
 
-            if (!icon) return;
+
+            if (!icon) {
+
+                return;
+
+            }
 
 
             if (isPlaying) {
 
                 icon.className =
-                    'fa-solid fa-compact-disc text-xl flex items-center justify-center spin-slow';
+                    'fa-solid fa-compact-disc text-xl w-6 h-6 flex items-center justify-center spin-slow';
 
             } else {
 
                 icon.className =
-                    'fa-solid fa-music text-xl flex items-center justify-center text-gray-400';
+                    'fa-solid fa-music text-xl w-6 h-6 flex items-center justify-center';
 
             }
 
@@ -1822,7 +3078,7 @@
 
 
         /* =====================================================
-           FALLING WHITE PETALS
+           FALLING PETALS
         ====================================================== */
 
         function createFallingPetal() {
@@ -1832,7 +3088,12 @@
                     'falling-flowers'
                 );
 
-            if (!container) return;
+
+            if (!container) {
+
+                return;
+
+            }
 
 
             const petal =
@@ -1845,53 +3106,80 @@
                 'falling-petal';
 
 
-            /* Random Size */
+            /* =================================================
+               RANDOM SIZE
+            ================================================= */
 
             const randomSize =
                 Math.random();
 
-            if (randomSize < 0.25) {
 
-                petal.classList.add(
-                    'small'
-                );
+            if (
+                randomSize <
+                0.25
+            ) {
 
-            } else if (randomSize > 0.75) {
+                petal
+                    .classList
+                    .add(
+                        'small'
+                    );
 
-                petal.classList.add(
-                    'large'
-                );
+            } else if (
+                randomSize >
+                0.75
+            ) {
+
+                petal
+                    .classList
+                    .add(
+                        'large'
+                    );
 
             }
 
 
-            /* Random Position */
+            /* =================================================
+               RANDOM POSITION
+            ================================================= */
 
             petal.style.left =
-                Math.random() * 100 + 'vw';
+                Math.random() *
+                100 +
+                'vw';
 
 
-            /* Fall Duration */
+            /* =================================================
+               DURATION
+            ================================================= */
 
             const fallDuration =
-                8 + Math.random() * 6;
+                8 +
+                Math.random() *
+                6;
 
 
             const swayDuration =
-                3 + Math.random() * 3;
+                3 +
+                Math.random() *
+                3;
 
 
             petal.style.animationDuration =
                 `${fallDuration}s, ${swayDuration}s`;
 
 
-            /* Random Delay */
+            /* =================================================
+               RANDOM DELAY
+            ================================================= */
 
             petal.style.animationDelay =
                 `${Math.random() * 2}s, 0s`;
 
 
-            /* Random Rotation */
+            /* =================================================
+               RANDOM ROTATION
+            ================================================= */
 
             petal.style.rotate =
                 `${Math.random() * 360}deg`;
@@ -1902,22 +3190,37 @@
             );
 
 
-            /* Remove */
+            /* =================================================
+               REMOVE AFTER ANIMATION
+            ================================================= */
 
             setTimeout(() => {
 
                 petal.remove();
 
-            }, (fallDuration + 3) * 1000);
+            },
+            (
+                fallDuration +
+                3
+            ) *
+            1000);
 
         }
 
 
         function initFallingPetals() {
 
-            if (petalsStarted) return;
+            if (
+                petalsStarted
+            ) {
 
-            petalsStarted = true;
+                return;
+
+            }
+
+
+            petalsStarted =
+                true;
 
 
             const container =
@@ -1925,10 +3228,17 @@
                     'falling-flowers'
                 );
 
-            if (!container) return;
+
+            if (!container) {
+
+                return;
+
+            }
 
 
-            /* Initial Petals */
+            /* =================================================
+               INITIAL PETALS
+            ================================================= */
 
             for (
                 let i = 0;
@@ -1937,18 +3247,27 @@
             ) {
 
                 setTimeout(
+
                     createFallingPetal,
-                    i * 350
+
+                    i *
+                    350
+
                 );
 
             }
 
 
-            /* Continuous Petals */
+            /* =================================================
+               CONTINUOUS PETALS
+            ================================================= */
 
             setInterval(
+
                 createFallingPetal,
+
                 700
+
             );
 
         }
@@ -1956,21 +3275,27 @@
 
         /* =====================================================
            COUNTDOWN
+           FINAL DATE:
+           SABTU, 10 OKTOBER 2026
+           09.00 WIB / UTC+7
         ====================================================== */
 
         const targetDate =
             new Date(
-                "September 13, 2026 13:00:00"
-            ).getTime();
+                "2026-10-10T09:00:00+07:00"
+            )
+            .getTime();
 
 
         function updateCountdown() {
 
             const now =
-                new Date().getTime();
+                Date.now();
+
 
             const distance =
-                targetDate - now;
+                targetDate -
+                now;
 
 
             const days =
@@ -1978,15 +3303,18 @@
                     "cd-days"
                 );
 
+
             const hours =
                 document.getElementById(
                     "cd-hours"
                 );
 
+
             const mins =
                 document.getElementById(
                     "cd-mins"
                 );
+
 
             const secs =
                 document.getElementById(
@@ -1994,61 +3322,143 @@
                 );
 
 
-            if (!days) return;
+            if (
+                !days ||
+                !hours ||
+                !mins ||
+                !secs
+            ) {
+
+                return;
+
+            }
 
 
-            if (distance > 0) {
+            /* =================================================
+               BEFORE EVENT
+            ================================================= */
 
-                days.innerText =
+            if (
+                distance >
+                0
+            ) {
+
+                const daysValue =
                     Math.floor(
                         distance /
-                        (1000 * 60 * 60 * 24)
-                    )
-                    .toString()
-                    .padStart(2, '0');
+                        (
+                            1000 *
+                            60 *
+                            60 *
+                            24
+                        )
+                    );
+
+
+                const hoursValue =
+                    Math.floor(
+                        (
+                            distance %
+                            (
+                                1000 *
+                                60 *
+                                60 *
+                                24
+                            )
+                        ) /
+                        (
+                            1000 *
+                            60 *
+                            60
+                        )
+                    );
+
+
+                const minsValue =
+                    Math.floor(
+                        (
+                            distance %
+                            (
+                                1000 *
+                                60 *
+                                60
+                            )
+                        ) /
+                        (
+                            1000 *
+                            60
+                        )
+                    );
+
+
+                const secsValue =
+                    Math.floor(
+                        (
+                            distance %
+                            (
+                                1000 *
+                                60
+                            )
+                        ) /
+                        1000
+                    );
+
+
+                days.innerText =
+                    daysValue
+                        .toString()
+                        .padStart(
+                            2,
+                            '0'
+                        );
 
 
                 hours.innerText =
-                    Math.floor(
-                        (
-                            distance %
-                            (1000 * 60 * 60 * 24)
-                        ) /
-                        (1000 * 60 * 60)
-                    )
-                    .toString()
-                    .padStart(2, '0');
+                    hoursValue
+                        .toString()
+                        .padStart(
+                            2,
+                            '0'
+                        );
 
 
                 mins.innerText =
-                    Math.floor(
-                        (
-                            distance %
-                            (1000 * 60 * 60)
-                        ) /
-                        (1000 * 60)
-                    )
-                    .toString()
-                    .padStart(2, '0');
+                    minsValue
+                        .toString()
+                        .padStart(
+                            2,
+                            '0'
+                        );
 
 
                 secs.innerText =
-                    Math.floor(
-                        (
-                            distance %
-                            (1000 * 60)
-                        ) /
-                        1000
-                    )
-                    .toString()
-                    .padStart(2, '0');
+                    secsValue
+                        .toString()
+                        .padStart(
+                            2,
+                            '0'
+                        );
 
-            } else {
+            }
 
-                days.innerText = "00";
-                hours.innerText = "00";
-                mins.innerText = "00";
-                secs.innerText = "00";
+
+            /* =================================================
+               EVENT HAS STARTED
+            ================================================= */
+
+            else {
+
+                days.innerText =
+                    "00";
+
+                hours.innerText =
+                    "00";
+
+                mins.innerText =
+                    "00";
+
+                secs.innerText =
+                    "00";
 
             }
 
@@ -2057,18 +3467,1500 @@
 
         updateCountdown();
 
+
         setInterval(
+
             updateCountdown,
+
             1000
+
+        );
+
+        /* =====================================================
+   WEDDING GALLERY
+   8 PHOTOS + AUTO SLIDER + CONNECTED THUMBNAILS
+====================================================== */
+
+
+/*
+=========================================================
+GANTI URL FOTO HANYA DI SINI.
+
+Semua foto di slider + thumbnail otomatis
+mengambil data dari array ini.
+=========================================================
+*/
+
+const weddingGallery = [
+
+    {
+        src:
+            "https://cdn.jsdelivr.net/gh/zakkimusyarrof/img-byzkk@main/fera2.JPG",
+
+        title:
+            "Fera & Anwar",
+
+        caption:
+            "Our Story"
+    },
+
+    {
+        src:
+            "https://cdn.jsdelivr.net/gh/zakkimusyarrof/img-byzkk@main/fera.jpg",
+
+        title:
+            "Fera & Anwar",
+
+        caption:
+            "Our Moment"
+    },
+
+    {
+        src:
+            "https://cdn.jsdelivr.net/gh/zakkimusyarrof/img-byzkk@main/fera3.JPG",
+
+        title:
+            "Fera & Anwar",
+
+        caption:
+            "Together"
+    },
+
+    {
+        src:
+            "https://cdn.jsdelivr.net/gh/zakkimusyarrof/img-byzkk@main/fera9.jpg",
+
+        title:
+            "Fera & Anwar",
+
+        caption:
+            "Our Journey"
+    },
+
+    {
+        src:
+            "https://cdn.jsdelivr.net/gh/zakkimusyarrof/img-byzkk@main/fera5.JPG",
+
+        title:
+            "Fera & Anwar",
+
+        caption:
+            "Beautiful Memory"
+    },
+
+    {
+        src:
+            "https://cdn.jsdelivr.net/gh/zakkimusyarrof/img-byzkk@main/fera7.jpg",
+
+        title:
+            "Fera & Anwar",
+
+        caption:
+            "A Moment to Remember"
+    },
+
+    {
+        src:
+            "https://cdn.jsdelivr.net/gh/zakkimusyarrof/img-byzkk@main/fera8.jpg",
+
+        title:
+            "Fera & Anwar",
+
+        caption:
+            "One Love"
+    },
+
+    {
+        src:
+            "https://cdn.jsdelivr.net/gh/zakkimusyarrof/img-byzkk@main/fera6.jpg",
+
+        title:
+            "Fera & Anwar",
+
+        caption:
+            "Forever Begins Here"
+    }
+
+];
+
+
+/* =====================================================
+   VARIABLES
+====================================================== */
+
+let galleryCurrentIndex =
+    0;
+
+
+let galleryInterval =
+    null;
+
+
+const galleryIntervalTime =
+    5000;
+
+
+/* =====================================================
+   ELEMENTS
+====================================================== */
+
+const galleryMainImage =
+    document.getElementById(
+        'gallery-main-image'
+    );
+
+
+const galleryMainTitle =
+    document.getElementById(
+        'gallery-main-title'
+    );
+
+
+const galleryMainCaption =
+    document.getElementById(
+        'gallery-main-caption'
+    );
+
+
+const galleryCurrentNumber =
+    document.getElementById(
+        'gallery-current-number'
+    );
+
+
+const galleryThumbnailContainer =
+    document.getElementById(
+        'gallery-thumbnails'
+    );
+
+
+const galleryDotsContainer =
+    document.getElementById(
+        'gallery-dots'
+    );
+
+
+const galleryPrev =
+    document.getElementById(
+        'gallery-prev'
+    );
+
+
+const galleryNext =
+    document.getElementById(
+        'gallery-next'
+    );
+
+
+const galleryProgress =
+    document.getElementById(
+        'gallery-progress'
+    );
+
+
+const gallerySlider =
+    document.getElementById(
+        'wedding-gallery-slider'
+    );
+
+
+/* =====================================================
+   CREATE THUMBNAILS
+====================================================== */
+
+function createGalleryThumbnails() {
+
+    if (
+        !galleryThumbnailContainer
+    ) {
+
+        return;
+
+    }
+
+
+    galleryThumbnailContainer.innerHTML =
+        '';
+
+
+    weddingGallery.forEach(
+        (
+            item,
+            index
+        ) => {
+
+            const button =
+                document.createElement(
+                    'button'
+                );
+
+
+            button.type =
+                'button';
+
+
+            button.className =
+                'gallery-thumbnail';
+
+
+            button.setAttribute(
+                'aria-label',
+                `Tampilkan foto ${index + 1}`
+            );
+
+
+            const img =
+                document.createElement(
+                    'img'
+                );
+
+
+            img.src =
+                item.src;
+
+
+            img.alt =
+                `Galeri Fera dan Anwar foto ${index + 1}`;
+
+
+            img.loading =
+                'lazy';
+
+
+            button.appendChild(
+                img
+            );
+
+
+            button.addEventListener(
+    'click',
+    () => {
+
+        /*
+        Sinkronkan slider utama
+        */
+
+        showGallerySlide(
+            index
         );
 
 
+        /*
+        Kemudian buka foto besar
+        */
+
+        openGalleryLightbox(
+            index
+        );
+
+    }
+);
+
+
+            galleryThumbnailContainer
+                .appendChild(
+                    button
+                );
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   CREATE DOTS
+====================================================== */
+
+function createGalleryDots() {
+
+    if (
+        !galleryDotsContainer
+    ) {
+
+        return;
+
+    }
+
+
+    galleryDotsContainer.innerHTML =
+        '';
+
+
+    weddingGallery.forEach(
+        (
+            item,
+            index
+        ) => {
+
+            const dot =
+                document.createElement(
+                    'button'
+                );
+
+
+            dot.type =
+                'button';
+
+
+            dot.className =
+                'gallery-dot';
+
+
+            dot.setAttribute(
+                'aria-label',
+                `Ke foto ${index + 1}`
+            );
+
+
+            dot.addEventListener(
+                'click',
+                () => {
+
+                    showGallerySlide(
+                        index
+                    );
+
+
+                    restartGalleryAutoSlide();
+
+                }
+            );
+
+
+            galleryDotsContainer
+                .appendChild(
+                    dot
+                );
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   DISPLAY SLIDE
+====================================================== */
+
+function showGallerySlide(
+    index
+) {
+
+    if (
+        !galleryMainImage ||
+        weddingGallery.length ===
+        0
+    ) {
+
+        return;
+
+    }
+
+
+    if (
+        index <
+        0
+    ) {
+
+        index =
+            weddingGallery.length -
+            1;
+
+    }
+
+
+    if (
+        index >=
+        weddingGallery.length
+    ) {
+
+        index =
+            0;
+
+    }
+
+
+    galleryCurrentIndex =
+        index;
+
+
+    const item =
+        weddingGallery[
+            galleryCurrentIndex
+        ];
+
+
+    /* Fade */
+
+    galleryMainImage
+        .classList
+        .add(
+            'gallery-changing'
+        );
+
+
+    setTimeout(
+        () => {
+
+            galleryMainImage.src =
+                item.src;
+
+
+            galleryMainImage.alt =
+                `Galeri pernikahan Fera dan Anwar foto ${galleryCurrentIndex + 1}`;
+
+
+            if (
+                galleryMainTitle
+            ) {
+
+                galleryMainTitle.textContent =
+                    item.title;
+
+            }
+
+
+            if (
+                galleryMainCaption
+            ) {
+
+                galleryMainCaption.textContent =
+                    item.caption;
+
+            }
+
+
+            if (
+                galleryCurrentNumber
+            ) {
+
+                galleryCurrentNumber.textContent =
+                    String(
+                        galleryCurrentIndex +
+                        1
+                    )
+                    .padStart(
+                        2,
+                        '0'
+                    );
+
+            }
+
+
+            updateGalleryControls();
+
+
+            galleryMainImage
+                .classList
+                .remove(
+                    'gallery-changing'
+                );
+
+
+            restartGalleryProgress();
+
+        },
+        250
+    );
+
+}
+
+
+/* =====================================================
+   UPDATE ACTIVE THUMBNAIL + DOT
+====================================================== */
+
+function updateGalleryControls() {
+
+    const thumbnails =
+        document.querySelectorAll(
+            '.gallery-thumbnail'
+        );
+
+
+    thumbnails.forEach(
+        (
+            thumbnail,
+            index
+        ) => {
+
+            thumbnail.classList.toggle(
+                'active',
+                index ===
+                galleryCurrentIndex
+            );
+
+        }
+    );
+
+
+    const dots =
+        document.querySelectorAll(
+            '.gallery-dot'
+        );
+
+
+    dots.forEach(
+        (
+            dot,
+            index
+        ) => {
+
+            dot.classList.toggle(
+                'active',
+                index ===
+                galleryCurrentIndex
+            );
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   NEXT
+====================================================== */
+
+function nextGallerySlide() {
+
+    showGallerySlide(
+        galleryCurrentIndex +
+        1
+    );
+
+}
+
+
+/* =====================================================
+   PREVIOUS
+====================================================== */
+
+function previousGallerySlide() {
+
+    showGallerySlide(
+        galleryCurrentIndex -
+        1
+    );
+
+}
+
+
+/* =====================================================
+   PROGRESS
+====================================================== */
+
+function restartGalleryProgress() {
+
+    if (
+        !galleryProgress
+    ) {
+
+        return;
+
+    }
+
+
+    galleryProgress
+        .classList
+        .remove(
+            'running'
+        );
+
+
+    void galleryProgress.offsetWidth;
+
+
+    galleryProgress
+        .classList
+        .add(
+            'running'
+        );
+
+}
+
+
+/* =====================================================
+   AUTO SLIDER
+====================================================== */
+
+function startGalleryAutoSlide() {
+
+    stopGalleryAutoSlide();
+
+
+    galleryInterval =
+        setInterval(
+            () => {
+
+                nextGallerySlide();
+
+            },
+            galleryIntervalTime
+        );
+
+
+    restartGalleryProgress();
+
+}
+
+
+/* =====================================================
+   STOP AUTO SLIDER
+====================================================== */
+
+function stopGalleryAutoSlide() {
+
+    if (
+        galleryInterval
+    ) {
+
+        clearInterval(
+            galleryInterval
+        );
+
+
+        galleryInterval =
+            null;
+
+    }
+
+}
+
+
+/* =====================================================
+   RESTART AUTO SLIDER
+====================================================== */
+
+function restartGalleryAutoSlide() {
+
+    stopGalleryAutoSlide();
+
+
+    startGalleryAutoSlide();
+
+}
+
+
+/* =====================================================
+   BUTTON EVENTS
+====================================================== */
+
+if (
+    galleryPrev
+) {
+
+    galleryPrev.addEventListener(
+        'click',
+        () => {
+
+            previousGallerySlide();
+
+
+            restartGalleryAutoSlide();
+
+        }
+    );
+
+}
+
+
+if (
+    galleryNext
+) {
+
+    galleryNext.addEventListener(
+        'click',
+        () => {
+
+            nextGallerySlide();
+
+
+            restartGalleryAutoSlide();
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   PAUSE WHEN MOUSE OVER
+====================================================== */
+
+if (
+    gallerySlider
+) {
+
+    gallerySlider.addEventListener(
+        'mouseenter',
+        stopGalleryAutoSlide
+    );
+
+
+    gallerySlider.addEventListener(
+        'mouseleave',
+        startGalleryAutoSlide
+    );
+
+}
+
+
+/* =====================================================
+   SWIPE SUPPORT FOR MOBILE
+====================================================== */
+
+let galleryTouchStartX =
+    0;
+
+
+let galleryTouchEndX =
+    0;
+
+
+if (
+    gallerySlider
+) {
+
+    gallerySlider.addEventListener(
+        'touchstart',
+        event => {
+
+            galleryTouchStartX =
+                event.changedTouches[0]
+                    .screenX;
+
+        },
+        {
+            passive:
+                true
+        }
+    );
+
+
+    gallerySlider.addEventListener(
+        'touchend',
+        event => {
+
+            galleryTouchEndX =
+                event.changedTouches[0]
+                    .screenX;
+
+
+            handleGallerySwipe();
+
+        },
+        {
+            passive:
+                true
+        }
+    );
+
+}
+
+
+function handleGallerySwipe() {
+
+    const swipeDistance =
+        galleryTouchStartX -
+        galleryTouchEndX;
+
+
+    if (
+        Math.abs(
+            swipeDistance
+        ) <
+        50
+    ) {
+
+        return;
+
+    }
+
+
+    if (
+        swipeDistance >
+        0
+    ) {
+
+        nextGallerySlide();
+
+    } else {
+
+        previousGallerySlide();
+
+    }
+
+
+    restartGalleryAutoSlide();
+
+}
+
+
+/* =====================================================
+   INITIALIZE GALLERY
+====================================================== */
+
+function initWeddingGallery() {
+
+    if (
+        !galleryMainImage
+    ) {
+
+        return;
+
+    }
+
+
+    createGalleryThumbnails();
+
+
+    createGalleryDots();
+
+
+    showGallerySlide(
+        0
+    );
+
+
+    /*
+    Respect reduced motion:
+    Jika pengguna mematikan animasi sistem,
+    auto-slider tidak dijalankan.
+    */
+
+    const reduceMotion =
+        window.matchMedia(
+            '(prefers-reduced-motion: reduce)'
+        )
+        .matches;
+
+
+    if (
+        !reduceMotion
+    ) {
+
+        startGalleryAutoSlide();
+
+    }
+
+}
+
+
+/* Start */
+
+initWeddingGallery();
+
+        /* =====================================================
+   GALLERY LIGHTBOX
+====================================================== */
+
+const galleryLightbox =
+    document.getElementById(
+        'gallery-lightbox'
+    );
+
+
+const galleryLightboxImage =
+    document.getElementById(
+        'gallery-lightbox-image'
+    );
+
+
+const galleryLightboxTitle =
+    document.getElementById(
+        'gallery-lightbox-title'
+    );
+
+
+const galleryLightboxCaption =
+    document.getElementById(
+        'gallery-lightbox-caption'
+    );
+
+
+const galleryLightboxCurrent =
+    document.getElementById(
+        'lightbox-current'
+    );
+
+
+const galleryLightboxTotal =
+    document.getElementById(
+        'lightbox-total'
+    );
+
+
+const galleryLightboxClose =
+    document.getElementById(
+        'gallery-lightbox-close'
+    );
+
+
+const galleryLightboxPrev =
+    document.getElementById(
+        'gallery-lightbox-prev'
+    );
+
+
+const galleryLightboxNext =
+    document.getElementById(
+        'gallery-lightbox-next'
+    );
+
+
+let lightboxCurrentIndex =
+    0;
+
+
+/* =====================================================
+   OPEN LIGHTBOX
+====================================================== */
+
+function openGalleryLightbox(index) {
+
+    if (
+        !galleryLightbox ||
+        !weddingGallery[index]
+    ) {
+
+        return;
+
+    }
+
+
+    lightboxCurrentIndex =
+        index;
+
+
+    updateGalleryLightbox();
+
+
+    galleryLightbox
+        .classList
+        .remove(
+            'hidden'
+        );
+
+
+    galleryLightbox
+        .classList
+        .add(
+            'flex'
+        );
+
+
+    document.body
+        .classList
+        .add(
+            'lightbox-open'
+        );
+
+
+    /*
+    Stop slider sementara popup dibuka
+    */
+
+    stopGalleryAutoSlide();
+
+
+    setTimeout(
+        () => {
+
+            galleryLightbox
+                .classList
+                .remove(
+                    'opacity-0'
+                );
+
+        },
+        10
+    );
+
+}
+
+
+/* =====================================================
+   CLOSE LIGHTBOX
+====================================================== */
+
+function closeGalleryLightbox() {
+
+    if (
+        !galleryLightbox
+    ) {
+
+        return;
+
+    }
+
+
+    galleryLightbox
+        .classList
+        .add(
+            'opacity-0'
+        );
+
+
+    galleryLightboxImage
+        ?.classList
+        .remove(
+            'zoomed'
+        );
+
+
+    document.body
+        .classList
+        .remove(
+            'lightbox-open'
+        );
+
+
+    setTimeout(
+        () => {
+
+            galleryLightbox
+                .classList
+                .add(
+                    'hidden'
+                );
+
+
+            galleryLightbox
+                .classList
+                .remove(
+                    'flex'
+                );
+
+
+            /*
+            Jalankan kembali auto slider
+            */
+
+            const reduceMotion =
+                window.matchMedia(
+                    '(prefers-reduced-motion: reduce)'
+                )
+                .matches;
+
+
+            if (
+                !reduceMotion
+            ) {
+
+                startGalleryAutoSlide();
+
+            }
+
+        },
+        300
+    );
+
+}
+
+
+/* =====================================================
+   UPDATE LIGHTBOX
+====================================================== */
+
+function updateGalleryLightbox() {
+
+    const item =
+        weddingGallery[
+            lightboxCurrentIndex
+        ];
+
+
+    if (
+        !item ||
+        !galleryLightboxImage
+    ) {
+
+        return;
+
+    }
+
+
+    galleryLightboxImage.src =
+        item.src;
+
+
+    galleryLightboxImage.alt =
+        `Galeri Fera dan Anwar foto ${lightboxCurrentIndex + 1}`;
+
+
+    galleryLightboxImage
+        .classList
+        .remove(
+            'zoomed'
+        );
+
+
+    if (
+        galleryLightboxTitle
+    ) {
+
+        galleryLightboxTitle.textContent =
+            item.title;
+
+    }
+
+
+    if (
+        galleryLightboxCaption
+    ) {
+
+        galleryLightboxCaption.textContent =
+            item.caption;
+
+    }
+
+
+    if (
+        galleryLightboxCurrent
+    ) {
+
+        galleryLightboxCurrent.textContent =
+            String(
+                lightboxCurrentIndex +
+                1
+            )
+            .padStart(
+                2,
+                '0'
+            );
+
+    }
+
+
+    if (
+        galleryLightboxTotal
+    ) {
+
+        galleryLightboxTotal.textContent =
+            String(
+                weddingGallery.length
+            )
+            .padStart(
+                2,
+                '0'
+            );
+
+    }
+
+}
+
+
+/* =====================================================
+   LIGHTBOX NEXT
+====================================================== */
+
+function nextLightboxImage() {
+
+    lightboxCurrentIndex++;
+
+
+    if (
+        lightboxCurrentIndex >=
+        weddingGallery.length
+    ) {
+
+        lightboxCurrentIndex =
+            0;
+
+    }
+
+
+    updateGalleryLightbox();
+
+}
+
+
+/* =====================================================
+   LIGHTBOX PREVIOUS
+====================================================== */
+
+function previousLightboxImage() {
+
+    lightboxCurrentIndex--;
+
+
+    if (
+        lightboxCurrentIndex <
+        0
+    ) {
+
+        lightboxCurrentIndex =
+            weddingGallery.length -
+            1;
+
+    }
+
+
+    updateGalleryLightbox();
+
+}
+
+
+/* =====================================================
+   CLICK MAIN IMAGE
+====================================================== */
+
+if (
+    galleryMainImage
+) {
+
+    galleryMainImage.addEventListener(
+        'click',
+        () => {
+
+            openGalleryLightbox(
+                galleryCurrentIndex
+            );
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   BUTTON EVENTS
+====================================================== */
+
+if (
+    galleryLightboxClose
+) {
+
+    galleryLightboxClose.addEventListener(
+        'click',
+        closeGalleryLightbox
+    );
+
+}
+
+
+if (
+    galleryLightboxNext
+) {
+
+    galleryLightboxNext.addEventListener(
+        'click',
+        nextLightboxImage
+    );
+
+}
+
+
+if (
+    galleryLightboxPrev
+) {
+
+    galleryLightboxPrev.addEventListener(
+        'click',
+        previousLightboxImage
+    );
+
+}
+
+
+/* =====================================================
+   CLICK OUTSIDE IMAGE TO CLOSE
+====================================================== */
+
+if (
+    galleryLightbox
+) {
+
+    galleryLightbox.addEventListener(
+        'click',
+        event => {
+
+            if (
+                event.target ===
+                galleryLightbox
+            ) {
+
+                closeGalleryLightbox();
+
+            }
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   CLICK IMAGE TO ZOOM
+====================================================== */
+
+if (
+    galleryLightboxImage
+) {
+
+    galleryLightboxImage.addEventListener(
+        'click',
+        event => {
+
+            event.stopPropagation();
+
+
+            galleryLightboxImage
+                .classList
+                .toggle(
+                    'zoomed'
+                );
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   KEYBOARD
+====================================================== */
+
+document.addEventListener(
+    'keydown',
+    event => {
+
+        if (
+            !galleryLightbox ||
+            galleryLightbox.classList.contains(
+                'hidden'
+            )
+        ) {
+
+            return;
+
+        }
+
+
+        if (
+            event.key ===
+            'Escape'
+        ) {
+
+            closeGalleryLightbox();
+
+        }
+
+
+        if (
+            event.key ===
+            'ArrowRight'
+        ) {
+
+            nextLightboxImage();
+
+        }
+
+
+        if (
+            event.key ===
+            'ArrowLeft'
+        ) {
+
+            previousLightboxImage();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   LIGHTBOX SWIPE MOBILE
+====================================================== */
+
+let lightboxTouchStartX =
+    0;
+
+
+let lightboxTouchEndX =
+    0;
+
+
+if (
+    galleryLightbox
+) {
+
+    galleryLightbox.addEventListener(
+        'touchstart',
+        event => {
+
+            lightboxTouchStartX =
+                event.changedTouches[0]
+                    .screenX;
+
+        },
+        {
+            passive:
+                true
+        }
+    );
+
+
+    galleryLightbox.addEventListener(
+        'touchend',
+        event => {
+
+            lightboxTouchEndX =
+                event.changedTouches[0]
+                    .screenX;
+
+
+            const distance =
+                lightboxTouchStartX -
+                lightboxTouchEndX;
+
+
+            if (
+                Math.abs(
+                    distance
+                ) <
+                50
+            ) {
+
+                return;
+
+            }
+
+
+            if (
+                distance >
+                0
+            ) {
+
+                nextLightboxImage();
+
+            } else {
+
+                previousLightboxImage();
+
+            }
+
+        },
+        {
+            passive:
+                true
+        }
+    );
+
+}
+
+        
         /* =====================================================
            SCROLL SPY
         ====================================================== */
 
         window.addEventListener(
+
             'scroll',
+
             () => {
 
                 const sections =
@@ -2076,16 +4968,19 @@
                         'section[id]'
                     );
 
+
                 const navLinks =
                     document.querySelectorAll(
                         '.nav-link'
                     );
 
 
-                let current = '';
+                let current =
+                    '';
 
 
                 sections.forEach(
+
                     section => {
 
                         const sectionTop =
@@ -2094,7 +4989,8 @@
 
                         if (
                             window.scrollY >=
-                            sectionTop - 300
+                            sectionTop -
+                            300
                         ) {
 
                             current =
@@ -2103,37 +4999,50 @@
                         }
 
                     }
+
                 );
 
 
                 navLinks.forEach(
+
                     link => {
 
-                        link.classList.remove(
-                            'active',
-                            'text-theme'
-                        );
+                        link
+                            .classList
+                            .remove(
+                                'active'
+                            );
 
 
                         if (
+
                             current &&
+
                             link
-                                .getAttribute('href')
-                                .substring(1) ===
+                                .getAttribute(
+                                    'href'
+                                )
+                                .substring(
+                                    1
+                                ) ===
                             current
+
                         ) {
 
-                            link.classList.add(
-                                'active',
-                                'text-theme'
-                            );
+                            link
+                                .classList
+                                .add(
+                                    'active'
+                                );
 
                         }
 
                     }
+
                 );
 
             }
+
         );
 
 
@@ -2141,67 +5050,113 @@
            MODAL
         ====================================================== */
 
-        function toggleModal(modalID) {
+        function toggleModal(
+            modalID
+        ) {
 
             const modal =
                 document.getElementById(
                     modalID
                 );
 
+
             const content =
                 document.getElementById(
-                    modalID + '-content'
+                    modalID +
+                    '-content'
                 );
 
 
             if (
-                modal.classList.contains(
-                    'hidden'
-                )
+                !modal ||
+                !content
             ) {
 
-                modal.classList.remove(
-                    'hidden'
-                );
+                return;
 
-                modal.classList.add(
-                    'flex'
-                );
+            }
 
 
-                setTimeout(() => {
+            /* =================================================
+               OPEN
+            ================================================= */
 
-                    modal.classList.remove(
-                        'opacity-0'
-                    );
+            if (
+                modal
+                    .classList
+                    .contains(
+                        'hidden'
+                    )
+            ) {
 
-                    content.classList.remove(
-                        'scale-95'
-                    );
-
-                }, 10);
-
-
-            } else {
-
-                modal.classList.add(
-                    'opacity-0'
-                );
-
-                content.classList.add(
-                    'scale-95'
-                );
-
-
-                setTimeout(() => {
-
-                    modal.classList.add(
+                modal
+                    .classList
+                    .remove(
                         'hidden'
                     );
 
-                    modal.classList.remove(
+
+                modal
+                    .classList
+                    .add(
                         'flex'
                     );
+
+
+                setTimeout(() => {
+
+                    modal
+                        .classList
+                        .remove(
+                            'opacity-0'
+                        );
+
+
+                    content
+                        .classList
+                        .remove(
+                            'scale-95'
+                        );
+
+                }, 10);
+
+            }
+
+
+            /* =================================================
+               CLOSE
+            ================================================= */
+
+            else {
+
+                modal
+                    .classList
+                    .add(
+                        'opacity-0'
+                    );
+
+
+                content
+                    .classList
+                    .add(
+                        'scale-95'
+                    );
+
+
+                setTimeout(() => {
+
+                    modal
+                        .classList
+                        .add(
+                            'hidden'
+                        );
+
+
+                    modal
+                        .classList
+                        .remove(
+                            'flex'
+                        );
 
                 }, 300);
 
@@ -2211,60 +5166,312 @@
 
 
         /* =====================================================
-           COPY ACCOUNT
+           CLOSE MODAL WHEN CLICKING BACKDROP
         ====================================================== */
 
-        function copyText(
-            elementId,
-            btnElement
-        ) {
+        document
+            .getElementById(
+                'gift-modal'
+            )
+            .addEventListener(
+                'click',
+                function(event) {
 
-            const text =
-                document.getElementById(
-                    elementId
-                ).innerText;
+                    if (
+                        event.target ===
+                        this
+                    ) {
 
-
-            navigator.clipboard
-                .writeText(text)
-                .then(() => {
-
-                    const originalText =
-                        btnElement.innerHTML;
-
-
-                    btnElement.innerHTML =
-                        '<i class="fa-solid fa-check mr-1"></i> Tersalin!';
-
-
-                    btnElement.classList.replace(
-                        'bg-theme',
-                        'bg-green-600'
-                    );
-
-
-                    setTimeout(() => {
-
-                        btnElement.innerHTML =
-                            originalText;
-
-                        btnElement.classList.replace(
-                            'bg-green-600',
-                            'bg-theme'
+                        toggleModal(
+                            'gift-modal'
                         );
 
-                    }, 2000);
+                    }
 
-                })
-                .catch(() => {
+                }
+            );
 
-                    alert(
-                        "Nomor rekening gagal disalin."
+
+        /* =====================================================
+   COPY ACCOUNT
+   Mendukung banyak rekening
+====================================================== */
+
+function copyText(elementId, btnElement) {
+
+    const element =
+        document.getElementById(
+            elementId
+        );
+
+
+    if (!element) {
+
+        console.error(
+            `Element dengan ID "${elementId}" tidak ditemukan.`
+        );
+
+        return;
+
+    }
+
+
+    const text =
+        element.textContent.trim();
+
+
+    if (!text) {
+
+        alert(
+            "Nomor rekening tidak tersedia."
+        );
+
+        return;
+
+    }
+
+
+    /* =================================================
+       SIMPAN KONDISI TOMBOL
+    ================================================= */
+
+    const originalHTML =
+        btnElement.innerHTML;
+
+
+    const originalClass =
+        btnElement.className;
+
+
+    /* =================================================
+       SUCCESS STATE
+    ================================================= */
+
+    function showCopySuccess() {
+
+        btnElement.innerHTML =
+            `
+            <i class="fa-solid fa-check mr-1"></i>
+            Tersalin!
+            `;
+
+
+        /*
+        Kita tidak memakai classList.replace(),
+        karena masing-masing tombol bisa memiliki
+        background class yang berbeda.
+        */
+
+        btnElement.className =
+            originalClass +
+            ' !bg-green-600 !text-white';
+
+
+        btnElement.disabled =
+            true;
+
+
+        setTimeout(
+            () => {
+
+                btnElement.innerHTML =
+                    originalHTML;
+
+
+                btnElement.className =
+                    originalClass;
+
+
+                btnElement.disabled =
+                    false;
+
+            },
+            2000
+        );
+
+    }
+
+
+    /* =================================================
+       ERROR STATE
+    ================================================= */
+
+    function showCopyError() {
+
+        btnElement.innerHTML =
+            `
+            <i class="fa-solid fa-xmark mr-1"></i>
+            Gagal Menyalin
+            `;
+
+
+        btnElement.className =
+            originalClass +
+            ' !bg-red-600 !text-white';
+
+
+        setTimeout(
+            () => {
+
+                btnElement.innerHTML =
+                    originalHTML;
+
+
+                btnElement.className =
+                    originalClass;
+
+            },
+            2000
+        );
+
+    }
+
+
+    /* =================================================
+       MODERN CLIPBOARD API
+    ================================================= */
+
+    if (
+        navigator.clipboard &&
+        window.isSecureContext
+    ) {
+
+        navigator.clipboard
+            .writeText(
+                text
+            )
+
+            .then(
+                showCopySuccess
+            )
+
+            .catch(
+                () => {
+
+                    fallbackCopyText(
+                        text,
+                        showCopySuccess,
+                        showCopyError
                     );
 
-                });
+                }
+            );
+
+    }
+
+
+    /* =================================================
+       FALLBACK UNTUK BROWSER LAMA / NON HTTPS
+    ================================================= */
+
+    else {
+
+        fallbackCopyText(
+            text,
+            showCopySuccess,
+            showCopyError
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   FALLBACK COPY
+====================================================== */
+
+function fallbackCopyText(
+    text,
+    onSuccess,
+    onError
+) {
+
+    const textarea =
+        document.createElement(
+            'textarea'
+        );
+
+
+    textarea.value =
+        text;
+
+
+    textarea.setAttribute(
+        'readonly',
+        ''
+    );
+
+
+    textarea.style.position =
+        'fixed';
+
+
+    textarea.style.opacity =
+        '0';
+
+
+    textarea.style.pointerEvents =
+        'none';
+
+
+    textarea.style.left =
+        '-9999px';
+
+
+    document.body.appendChild(
+        textarea
+    );
+
+
+    textarea.select();
+
+
+    textarea.setSelectionRange(
+        0,
+        textarea.value.length
+    );
+
+
+    try {
+
+        const successful =
+            document.execCommand(
+                'copy'
+            );
+
+
+        textarea.remove();
+
+
+        if (successful) {
+
+            onSuccess();
+
+        } else {
+
+            onError();
 
         }
+
+    }
+
+    catch (error) {
+
+        textarea.remove();
+
+
+        console.error(
+            "Copy error:",
+            error
+        );
+
+
+        onError();
+
+    }
+
+}
 
 
         /* =====================================================
@@ -2273,26 +5480,12 @@
 
         const firebaseConfig = {
 
-            apiKey:
-                "AIzaSyBTEmgi5p6-5XcI9uf7wiUbqIpgEZ1_YvM",
-
-            authDomain:
-                "rsvp-fera-anwar.firebaseapp.com",
-
-            databaseURL:
-                "https://rsvp-fera-anwar-default-rtdb.firebaseio.com",
-
-            projectId:
-                "rsvp-fera-anwar",
-
-            storageBucket:
-                "rsvp-fera-anwar.firebasestorage.app",
-
-            messagingSenderId:
-                "765740637145",
-
-            appId:
-                "1:765740637145:web:546daea77428dd3b6717c8"
+            apiKey: "AIzaSyBroaPfA36WJ35ckTsFAN0pX1D7jgxZDA0",
+  authDomain: "rsvp-feraanwar.firebaseapp.com",
+  projectId: "rsvp-feraanwar",
+  storageBucket: "rsvp-feraanwar.firebasestorage.app",
+  messagingSenderId: "1021732144223",
+  appId: "1:1021732144223:web:6bed37b2f83e3ee56187ea",
 
         };
 
@@ -2316,11 +5509,16 @@
             );
 
 
-        db.collection("ucapan")
+        db
+            .collection(
+                "ucapan"
+            )
+
             .orderBy(
                 "timestamp",
                 "desc"
             )
+
             .onSnapshot(
 
                 snapshot => {
@@ -2329,22 +5527,33 @@
                         "";
 
 
+                    /* =========================================
+                       EMPTY
+                    ========================================== */
+
                     if (
                         snapshot.empty
                     ) {
 
-                        wishesList.innerHTML = `
-                            <div class="text-center py-4 text-gray-500 text-sm">
+                        wishesList.innerHTML =
+                            `
+                            <div class="text-center py-5 text-[#5A3A2E]/70 text-sm">
                                 Jadilah yang pertama memberikan ucapan!
                             </div>
-                        `;
+                            `;
+
 
                         return;
 
                     }
 
 
+                    /* =========================================
+                       RENDER
+                    ========================================== */
+
                     snapshot.forEach(
+
                         doc => {
 
                             const data =
@@ -2354,8 +5563,10 @@
                             const badgeClass =
                                 data.rsvp ===
                                 'Hadir'
-                                    ? 'bg-theme'
-                                    : 'bg-gray-400';
+
+                                ? 'bg-theme'
+
+                                : 'bg-[#8D7469]';
 
 
                             let dateStr =
@@ -2367,15 +5578,18 @@
                             ) {
 
                                 dateStr =
-                                    data.timestamp
+                                    data
+                                        .timestamp
                                         .toDate()
                                         .toLocaleDateString(
                                             'id-ID',
                                             {
                                                 day:
                                                     'numeric',
+
                                                 month:
                                                     'short',
+
                                                 year:
                                                     'numeric'
                                             }
@@ -2384,42 +5598,50 @@
                             }
 
 
-                            const newWish = `
-                                <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 animate-fade-in-up mb-4">
+                            const newWish =
+                                `
+                                <div class="bg-[#F5EBDD] p-5 rounded-2xl shadow-sm border border-[#C6A15B]/25 animate-fade-in-up mb-4">
 
-                                    <div class="flex justify-between items-center mb-2">
+                                    <div class="flex flex-wrap justify-between items-start gap-2 mb-2">
 
-                                        <h4 class="font-bold text-gray-800">
+                                        <h4 class="font-bold text-[#4A1018]">
+
                                             ${escapeHTML(data.name)}
 
-                                            <span class="${badgeClass} text-white text-[10px] px-2 py-1 rounded-full ml-2 font-normal">
+                                            <span class="${badgeClass} text-[#FAF8F2] text-[10px] px-2 py-1 rounded-full ml-1 font-normal whitespace-nowrap">
                                                 ${escapeHTML(data.rsvp)}
                                             </span>
+
                                         </h4>
 
-                                        <span class="text-xs text-gray-400">
+
+                                        <span class="text-xs text-[#5A3A2E]/50 whitespace-nowrap">
                                             ${dateStr}
                                         </span>
 
                                     </div>
 
-                                    <p class="text-sm text-gray-600">
+
+                                    <p class="text-sm leading-relaxed text-[#5A3A2E] break-words">
                                         ${escapeHTML(data.msg)}
                                     </p>
 
                                 </div>
-                            `;
+                                `;
 
 
-                            wishesList.insertAdjacentHTML(
-                                'beforeend',
-                                newWish
-                            );
+                            wishesList
+                                .insertAdjacentHTML(
+                                    'beforeend',
+                                    newWish
+                                );
 
                         }
+
                     );
 
                 },
+
 
                 error => {
 
@@ -2428,11 +5650,13 @@
                         error
                     );
 
-                    wishesList.innerHTML = `
-                        <div class="text-center py-4 text-red-400 text-sm">
+
+                    wishesList.innerHTML =
+                        `
+                        <div class="text-center py-4 text-[#681C27] text-sm">
                             Gagal memuat ucapan.
                         </div>
-                    `;
+                        `;
 
                 }
 
@@ -2443,11 +5667,16 @@
            SECURITY - ESCAPE HTML
         ====================================================== */
 
-        function escapeHTML(value) {
+        function escapeHTML(
+            value
+        ) {
 
             if (
-                value === null ||
-                value === undefined
+                value ===
+                null ||
+
+                value ===
+                undefined
             ) {
 
                 return '';
@@ -2455,23 +5684,30 @@
             }
 
 
-            return String(value)
+            return String(
+                value
+            )
+
                 .replace(
                     /&/g,
                     '&amp;'
                 )
+
                 .replace(
                     /</g,
                     '&lt;'
                 )
+
                 .replace(
                     />/g,
                     '&gt;'
                 )
+
                 .replace(
                     /"/g,
                     '&quot;'
                 )
+
                 .replace(
                     /'/g,
                     '&#039;'
@@ -2488,9 +5724,14 @@
             .getElementById(
                 "rsvp-form"
             )
+
             .addEventListener(
+
                 "submit",
-                function(e) {
+
+                function(
+                    e
+                ) {
 
                     e.preventDefault();
 
@@ -2510,29 +5751,42 @@
 
 
                     btn.innerHTML =
-                        '<i class="fa-solid fa-spinner fa-spin"></i> Mengirim...';
+                        '<i class="fa-solid fa-spinner fa-spin mr-2"></i> Mengirim...';
 
 
-                    btn.disabled = true;
+                    btn.disabled =
+                        true;
 
 
                     const name =
-                        document.getElementById(
-                            "wish-name"
-                        ).value.trim();
+                        document
+                            .getElementById(
+                                "wish-name"
+                            )
+                            .value
+                            .trim();
 
 
                     const rsvp =
-                        document.getElementById(
-                            "wish-rsvp"
-                        ).value;
+                        document
+                            .getElementById(
+                                "wish-rsvp"
+                            )
+                            .value;
 
 
                     const msg =
-                        document.getElementById(
-                            "wish-msg"
-                        ).value.trim();
+                        document
+                            .getElementById(
+                                "wish-msg"
+                            )
+                            .value
+                            .trim();
 
+
+                    /* =========================================
+                       VALIDATION
+                    ========================================== */
 
                     if (
                         !name ||
@@ -2542,15 +5796,25 @@
                         btn.innerHTML =
                             originalBtnText;
 
+
                         btn.disabled =
                             false;
+
 
                         return;
 
                     }
 
 
-                    db.collection("ucapan")
+                    /* =========================================
+                       SAVE TO FIRESTORE
+                    ========================================== */
+
+                    db
+                        .collection(
+                            "ucapan"
+                        )
+
                         .add({
 
                             name:
@@ -2570,19 +5834,26 @@
 
                         })
 
+
+                        /* =====================================
+                           SUCCESS
+                        ====================================== */
+
                         .then(() => {
 
                             form.reset();
 
 
                             btn.innerHTML =
-                                '<i class="fa-solid fa-check"></i> Terkirim!';
+                                '<i class="fa-solid fa-check mr-2"></i> Terkirim!';
 
 
-                            btn.classList.replace(
-                                'bg-theme',
-                                'bg-green-600'
-                            );
+                            btn
+                                .classList
+                                .replace(
+                                    'bg-theme',
+                                    'bg-green-600'
+                                );
 
 
                             setTimeout(() => {
@@ -2590,10 +5861,14 @@
                                 btn.innerHTML =
                                     originalBtnText;
 
-                                btn.classList.replace(
-                                    'bg-green-600',
-                                    'bg-theme'
-                                );
+
+                                btn
+                                    .classList
+                                    .replace(
+                                        'bg-green-600',
+                                        'bg-theme'
+                                    );
+
 
                                 btn.disabled =
                                     false;
@@ -2602,32 +5877,42 @@
 
                         })
 
-                        .catch(error => {
 
-                            console.error(
-                                "Error:",
-                                error
-                            );
+                        /* =====================================
+                           ERROR
+                        ====================================== */
+
+                        .catch(
+                            error => {
+
+                                console.error(
+                                    "Error:",
+                                    error
+                                );
 
 
-                            alert(
-                                "Gagal mengirim ucapan. Pastikan koneksi internet stabil dan Firestore Rules sudah benar."
-                            );
+                                alert(
+                                    "Gagal mengirim ucapan. Pastikan koneksi internet stabil dan Firestore Rules sudah benar."
+                                );
 
 
-                            btn.innerHTML =
-                                originalBtnText;
+                                btn.innerHTML =
+                                    originalBtnText;
 
-                            btn.disabled =
-                                false;
 
-                        });
+                                btn.disabled =
+                                    false;
+
+                            }
+
+                        );
 
                 }
+
             );
 
     </script>
 
 </body>
 
-    </html>
+</html>
