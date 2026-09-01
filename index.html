@@ -1115,7 +1115,24 @@ body.lightbox-open {
     }
 
 }
-        
+        /* LOVE STORY */
+
+@keyframes floatingHeart {
+
+    0%,100% {
+        transform:translateY(0);
+    }
+
+    50% {
+        transform:translateY(-8px);
+    }
+
+}
+
+
+.story-heart {
+    animation:floatingHeart 3s ease-in-out infinite;
+}
     </style>
 
 </head>
@@ -1306,11 +1323,15 @@ body.lightbox-open {
                 aria-label="Couple"
             >
 
-                <i class="fa-solid fa-heart"></i>
+                <i class="fa-solid fa-user"></i>
 
             </a>
 
-
+<a href="#story" class="nav-link flex flex-col items-center gap-1"
+                aria-label="Story"
+            >
+    <i class="fa-solid fa-heart"></i>
+</a>
             <a
                 href="#event"
                 class="nav-link flex flex-col items-center gap-1"
@@ -1631,6 +1652,339 @@ body.lightbox-open {
 
         </section>
 
+        <!-- =================================================
+     LOVE STORY
+================================================== -->
+
+<section
+    id="story"
+    class="relative py-28 px-6 bg-[#2B1A17] overflow-hidden"
+>
+
+
+    <!-- Decorative -->
+
+    <div
+        class="absolute top-10 left-10 w-32 h-32 border border-[#C6A15B]/30 rounded-full animate-pulse"
+    ></div>
+
+
+    <div
+        class="absolute bottom-10 right-10 w-40 h-40 border border-[#C6A15B]/20 rounded-full"
+    ></div>
+
+
+
+    <div
+        class="max-w-3xl mx-auto relative z-10"
+    >
+
+
+        <!-- Header -->
+
+        <div
+            class="text-center mb-16"
+            data-aos="fade-down"
+        >
+
+            <div
+                class="flex justify-center items-center gap-3 mb-5"
+            >
+
+                <span
+                    class="w-12 h-px bg-[#C6A15B]"
+                ></span>
+
+
+                <span
+                    class="text-[#C6A15B]"
+                >
+                    ✦
+                </span>
+
+
+                <span
+                    class="w-12 h-px bg-[#C6A15B]"
+                ></span>
+
+            </div>
+
+
+            <p
+                class="uppercase tracking-[0.3em] text-xs text-[#C6A15B] mb-4"
+            >
+                Our Journey
+            </p>
+
+
+            <h2
+                class="font-script text-6xl text-[#4A1018]"
+            >
+                Love Story
+            </h2>
+
+
+            <p
+                class="font-serif italic text-[#5A3A2E] mt-5"
+            >
+                Sebuah perjalanan kecil yang membawa kita
+                menuju cerita yang lebih besar.
+            </p>
+
+
+        </div>
+
+
+
+
+
+        <!-- Timeline -->
+
+        <div
+            class="relative"
+        >
+
+
+            <!-- Line -->
+
+            <div
+                class="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-[#C6A15B]/40 hidden md:block"
+            ></div>
+
+
+
+            <!-- ITEM 1 -->
+
+            <div
+                class="relative mb-16 md:flex items-center justify-between"
+                data-aos="fade-right"
+            >
+
+
+                <div
+                    class="md:w-[45%]"
+                >
+
+                    <div
+                        class="bg-white rounded-[2rem] p-7 shadow-lg border border-[#C6A15B]/20 hover:-translate-y-2 transition duration-500"
+                    >
+
+                        <span
+                            class="font-serif text-4xl text-[#C6A15B] font-bold"
+                        >
+                            2021
+                        </span>
+
+
+                        <h3
+                            class="font-serif text-2xl text-[#4A1018] mt-3 mb-4"
+                        >
+                            Awal Bertemu
+                        </h3>
+
+
+                        <p
+                            class="text-[#5A3A2E] text-sm leading-relaxed"
+                        >
+
+                            Alhamdulillah, kita dipertemukan
+                            melalui Instagram.
+
+                            <br><br>
+
+                            Berawal dari sebuah pesan sederhana,
+                            kamu mengirim kabar baik dan aku
+                            membalas pesan itu.
+
+                            <br><br>
+
+                            Dari perkenalan singkat itulah,
+                            perjalanan kita dimulai.
+
+                        </p>
+
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- Circle -->
+
+                <div
+                    class="hidden md:flex absolute left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-[#4A1018] border-2 border-[#C6A15B] items-center justify-center text-[#C6A15B]"
+                >
+
+                    <i
+                        class="fa-solid fa-heart"
+                    ></i>
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+
+            <!-- ITEM 2 -->
+
+            <div
+                class="relative mb-16 md:flex justify-end"
+                data-aos="fade-left"
+            >
+
+
+                <div
+                    class="md:w-[45%]"
+                >
+
+                    <div
+                        class="bg-[#4A1018] rounded-[2rem] p-7 shadow-xl border border-[#C6A15B]/30 hover:-translate-y-2 transition duration-500"
+                    >
+
+                        <span
+                            class="font-serif text-4xl text-[#C6A15B] font-bold"
+                        >
+                            2021 - 2026
+                        </span>
+
+
+                        <h3
+                            class="font-serif text-2xl text-[#F5EBDD] mt-3 mb-4"
+                        >
+                            Mengenal &amp; Bertumbuh
+                        </h3>
+
+
+                        <p
+                            class="text-[#DCC9A3] text-sm leading-relaxed"
+                        >
+
+                            Lima tahun menjadi waktu kita
+                            untuk saling mengenal satu sama lain.
+
+                            <br><br>
+
+                            Tidak ada yang lebih sempurna dan
+                            tidak ada yang selalu benar di antara
+                            kita.
+
+                            <br><br>
+
+                            Kita hanya terus belajar, tumbuh,
+                            dan berusaha menjadi versi terbaik
+                            untuk satu sama lain.
+
+                        </p>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div
+                    class="hidden md:flex absolute left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-[#4A1018] border-2 border-[#C6A15B] items-center justify-center text-[#C6A15B]"
+                >
+
+                    <i
+                        class="fa-solid fa-seedling"
+                    ></i>
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+
+            <!-- ITEM 3 -->
+
+            <div
+                class="relative md:flex items-center justify-between"
+                data-aos="fade-right"
+            >
+
+
+                <div
+                    class="md:w-[45%]"
+                >
+
+                    <div
+                        class="bg-white rounded-[2rem] p-7 shadow-lg border border-[#C6A15B]/20 hover:-translate-y-2 transition duration-500"
+                    >
+
+                        <span
+                            class="font-serif text-4xl text-[#C6A15B] font-bold"
+                        >
+                            2026
+                        </span>
+
+
+                        <h3
+                            class="font-serif text-2xl text-[#4A1018] mt-3 mb-4"
+                        >
+                            Menuju Masa Depan
+                        </h3>
+
+
+                        <p
+                            class="text-[#5A3A2E] text-sm leading-relaxed"
+                        >
+
+                            Sampai akhirnya kita berada
+                            pada titik ini.
+
+                            <br><br>
+
+                            Bersama mengukir cerita baru,
+                            melangkah menuju perjalanan
+                            panjang yang akan kita jalani
+                            bersama.
+
+                        </p>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <div
+                    class="hidden md:flex absolute left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-[#4A1018] border-2 border-[#C6A15B] items-center justify-center text-[#C6A15B]"
+                >
+
+                    <i
+                        class="fa-solid fa-ring"
+                    ></i>
+
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
 
         <!-- =================================================
              EVENT
@@ -1758,8 +2112,11 @@ body.lightbox-open {
                 09.00 WIB - Selesai
             </p>
 
-
-
+            <p
+                class="text-[#C6A15B] text-xs italic mt-2 mb-8"
+                >
+                di kediaman mempelai wanita
+            </p>
 
 
             <!-- Location -->
@@ -1801,6 +2158,87 @@ body.lightbox-open {
                 Buka Google Maps
 
             </a>
+            <!-- =================================================
+     UNDuh MANTU
+================================================== -->
+
+
+<div
+    class="mt-10 pt-10 border-t border-[#C6A15B]/30"
+>
+
+
+    <h3
+        class="font-serif text-3xl text-[#F5EBDD] mb-3"
+    >
+        Unduh Mantu
+    </h3>
+
+
+    <p
+        class="text-[#DCC9A3] text-sm mb-2"
+    >
+        Jam Bebas
+    </p>
+
+
+    <p
+        class="text-[#C6A15B] text-xs italic mb-6"
+    >
+        di kediaman mempelai pria
+    </p>
+
+
+
+
+    <!-- Location -->
+
+    <div
+        class="bg-[#2B1A17]/40 rounded-2xl p-5 border border-[#C6A15B]/20 mb-6"
+    >
+
+        <i
+            class="fa-solid fa-location-dot text-[#C6A15B] text-xl mb-3"
+        ></i>
+
+
+        <p
+            class="text-[#F5EBDD] leading-relaxed text-sm"
+        >
+
+            Dukuh Bajangan RT 03 RW 02
+            <br>
+
+            Damarwulan, Keling
+            <br>
+
+            Jepara
+
+        </p>
+
+    </div>
+
+
+
+
+    <!-- Button -->
+
+    <a
+        href="https://maps.app.goo.gl/WxgmKsBHP8VhMYCg7"
+        target="_blank"
+        class="block w-full bg-[#681C27] hover:bg-[#C6A15B] hover:text-[#2B1A17] text-[#FAF8F2] py-4 rounded-full font-semibold transition-all duration-300 shadow-lg"
+    >
+
+        <i
+            class="fa-solid fa-map-location-dot mr-2"
+        ></i>
+
+        Buka Google Maps
+
+    </a>
+
+
+</div>
 
 
         </div>
@@ -1808,10 +2246,7 @@ body.lightbox-open {
 
     </div>
 
-
-
-
-
+            
     <!-- COUNTDOWN -->
 
     <div
